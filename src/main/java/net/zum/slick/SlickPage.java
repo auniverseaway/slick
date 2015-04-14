@@ -1,6 +1,7 @@
 package net.zum.slick;
 
 import java.util.Calendar;
+import java.util.Iterator;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -8,8 +9,10 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
 
 @Model(adaptables = Resource.class)
 public class SlickPage
@@ -22,14 +25,19 @@ public class SlickPage
 	@Inject
     private String content;
 	
-	@Inject @Named("jcr:created")
+	@Inject @Optional @Named("jcr:created")
     private Calendar date;
+	
+	@Inject @Optional
+    private String slickType;
 	
 	public String path;
 	
 	public ValueMap properties;
 	
 	public String guid;
+	
+	public Iterator<SlickPage> children;
 	
 	public SlickPage(final Resource resource) {
         this.resource = resource;
@@ -60,5 +68,16 @@ public class SlickPage
     public Calendar getDate()
     {
     	return date;
+    }
+    
+    public String getSlickType()
+    {
+    	return slickType;
+    }
+    
+    public Iterator<SlickPage> getChildren()
+    {
+    	Iterator<Resource> childs = resource.getChildren().iterator();
+    	return ResourceUtil.adaptTo(childs,SlickPage.class);
     }
 }

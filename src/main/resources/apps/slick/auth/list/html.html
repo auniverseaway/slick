@@ -4,25 +4,23 @@
   <body data-sly-use.page="${'net.zum.slick.Page'}">
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
+    <section data-sly-use.actions="${'net.zum.slick.SlickPage'}">
+      <div class="container">
+        <a href="/content/slick/auth/${properties.slickType}/edit.html">New</a>
+      </div>
+    </section>
+
     <section>
 
-      <div class="container">
-        <h1>${properties.slickType}</h1>
-        <ul data-sly-list="${page.getChildren}">
+      <div class="container" data-sly-use.list="${'net.zum.slick.auth.List'}">
+        <ul data-sly-list="${list.children}">
           <li>
-            <a href="${item.getPath}.html">${item.title}</a>
-            <ul data-sly-list.child="${item.getProperties}" class="menu">
-              <li>${child} ${item.getProperties[child] @ context="unsafe"}</li>
-            </ul>
+            <p><a href="/content/slick/auth/${properties.slickType}/edit.html?edit=${item.path @ context='uri'}">${item.title}</a></p>
+            <p data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=item.date, dateFormat='MM/dd/yyyy'}">
+              ${format.formattedValue}
+            </p>
           </li>
         </ul>
-        
-        <div data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=properties.date, dateFormat='dd/MM/yyyy'}">
-        	${format.formattedValue}
-        </div>
-        
-        
-        
       </div>
 
     </section>
