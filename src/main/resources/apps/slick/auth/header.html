@@ -1,0 +1,8 @@
+<header data-sly-use.header="${'net.zum.slick.auth.Header'}">
+  <div class="container">
+    <a href="${header.getPath}.html"><img src="/etc/themes/slick/img/slick-logo.svg"/></a>
+    <ul data-sly-list="${header.getAdminHeader}" class="menu">
+      <li><a href="${item.getPath}.html">${item.title}</a></li>
+    </ul>
+  </div>
+</header>

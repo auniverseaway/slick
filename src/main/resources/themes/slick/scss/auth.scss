@@ -1,0 +1,144 @@
+@import '../fonts/fonts';
+@import 'colors';
+
+/* Overrides */
+
+b {
+  font-family: "GothamMediumRegular";
+  font-weight: normal;
+}
+
+/* Admin */
+body {
+  background: $body-grey;
+  font-family: "GothamLightRegular";
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+header {
+  background: #FFF;
+  margin-bottom: 40px;
+
+  img {
+    height: 60px;
+    float: left;
+    margin: 28px 28px 28px 0px;
+  }
+
+  .menu {
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    li {
+      float: left;
+      letter-spacing: .6rem;
+
+      a {
+        line-height: 116px;
+        text-transform: uppercase;
+        padding: 0px 60px;
+        color: #C1C1C1;
+        display: block;
+        transition: background-color 0.24s ease;
+      }
+      a:hover {
+        background-color: $slick-green;
+        text-decoration: none;
+        color: #FFF;
+      }
+    } // Li
+  } // Menu
+} // Header
+
+footer {
+  background-color: $light-grey;
+  padding: 28px;
+  margin-top: 28px;
+  p {
+    margin: 0px;
+    color: $medium-grey;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: 1rem;
+    a {
+      color: $medium-grey;
+    }
+  }
+}
+
+form {
+  input.form-control, textarea.form-control, .editor-area {
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 24px 0px 24px 0px;
+    font-size: 18px;
+    font-size: 2rem;
+    background-color: $body-grey;
+  }
+
+  .editor-area.placeholder {
+    color: #999999;
+  }
+
+  textarea.form-control, .editor-area {
+    padding: 14px 0px 14px 0px;
+    width: 100%;
+    height: 600px;
+    font-size: 2rem;
+  }
+
+  .editor-area:focus, .form-control:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .button {
+    background-color: $slick-green;
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  #toolbar {
+    margin: 0px -8px;
+    
+    .edit-command {
+      float: left;
+
+      > a {
+        display: block;
+        padding: 7px;
+        text-transform: uppercase;
+        color: #A5CAA3;
+      }
+
+      > a:hover {
+        background-color: $slick-green;
+        color: #fff;
+      }
+
+    }  
+
+    > .edit-command:last-child{
+      float: right;
+    }
+
+  }
+
+  #toolbar:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+
+}
+
+/* Public */
+

@@ -1,0 +1,20 @@
+{
+	"jcr:primaryType": "sling:Folder",
+    "http": {
+	    "jcr:primaryType": "sling:OrderedFolder",
+	    "dev_experiencemanaged_com": {
+	    	"sling:internalRedirect": "/content/slick.html",
+	        "jcr:primaryType": "sling:Mapping",
+	        "sling:match": "dev.experiencemanaged.com.8080/$"
+	    },
+	    "dev.experiencemanaged.com.8080": {
+	    	"sling:internalRedirect": ["/content/slick"],
+	        "jcr:primaryType": "sling:Mapping",
+	        "redirect": {
+				"sling:internalRedirect": ["/content/slick/$1","/$1"],
+				"jcr:primaryType": "sling:Mapping",
+				"sling:match": "(.+)$"
+		 	}
+	    }
+	}
+}

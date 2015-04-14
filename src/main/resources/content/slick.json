@@ -1,0 +1,56 @@
+{
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "slick",
+    "title": "Slick",
+    "sling:resourceType":"slick:pub:list",
+    "slickType": "posts",
+    "content": "A blogging engine built with Sling and Sightly.",
+    "auth": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "slick:auth:home",
+        "title": "Slick Admin",
+        "content": "Welcome to Slick Admin",
+        "posts": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "slick:auth:list",
+            "title": "Posts",
+            "slickType": "posts",
+            "content": "Slick Posts",
+            "edit": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "slick:auth:edit",
+                "title": "Edit Post",
+                "slickType": "posts",
+                "content": "Welcome to Slick Admin"
+            },
+        },
+        "pages": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "slick:auth:list",
+            "title": "Pages",
+            "slickType": "pages",
+            "content": "Welcome to Slick Admin",
+            "edit": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "slick:auth:edit",
+                "title": "Edit Page",
+                "slickType": "pages",
+                "content": "Welcome to Slick Admin"
+            }
+        },
+        "media": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "slick:auth:list",
+            "title": "Media",
+            "slickType": "media",
+            "content": "Welcome to Slick Admin",
+            "edit": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "slick:auth:editmedia",
+                "title": "Edit Media",
+                "slickType": "media",
+                "content": "Welcome to Slick Admin"
+            }
+        }
+    }
+}

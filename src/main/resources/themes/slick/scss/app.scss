@@ -1,0 +1,84 @@
+@import '../fonts/fonts';
+@import 'colors';
+
+/* Overrides */
+
+body {
+  background: #FFF;
+  font-family: "GothamLightRegular";
+  a:hover, a:active, a:focus {
+    text-decoration: none;
+  }
+}
+
+b {
+  font-family: "GothamMediumRegular";
+  font-weight: normal;
+}
+
+/* Public */
+
+/* Sticky Footer Fix */
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page {
+  min-height: 100%;
+  margin-bottom: -72px; 
+}
+.page:after {
+  content: "";
+  display: block;
+}
+.page:after {
+  height: 72px; 
+}
+/* End Sticky Footer Fix */
+
+
+header {
+  margin-bottom: 40px;
+  text-align: center;
+
+  > a {
+    display: inline-block;
+  }
+
+  img {
+    height: 60px;
+    margin: 28px 0px;
+  }
+}
+
+footer {
+  background-color: $light-grey;
+  height: 72px;
+  p {
+    margin: 0px;
+    color: $medium-grey;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: 1rem;
+    line-height: 7.2rem;
+    a {
+      color: $medium-grey;
+    }
+  }
+}
+
+/* Article */
+
+article {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+
+  p {
+    img {
+      max-width: 480px;
+    }
+  }
+
+}

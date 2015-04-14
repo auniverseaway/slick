@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <sly data-sly-include="../head.html" data-sly-unwrap></sly>
+  <body data-sly-use.page="${'net.zum.slick.Page'}">
+    <sly data-sly-include="../header.html" data-sly-unwrap></sly>
+    
+    <section>
+
+      <div class="container">
+        <h1>${properties.slickType}</h1>
+        <ul data-sly-list="${page.getChildren}">
+          <li>
+            <a href="${item.getPath}.html">${item.title}</a>
+            <ul data-sly-list.child="${item.getProperties}" class="menu">
+              <li>${child} ${item.getProperties[child] @ context="unsafe"}</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=properties.date, dateFormat='dd/MM/yyyy'}">
+        	${format.formattedValue}
+        </div>
+        
+        
+        
+      </div>
+
+    </section>
+    <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="/content/slick/themes/slick/js/app.js"></script>
+  </body>
+</html>
