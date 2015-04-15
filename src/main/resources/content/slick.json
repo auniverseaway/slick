@@ -52,5 +52,12 @@
                 "content": "Welcome to Slick Admin"
             }
         }
+    },
+    "feed": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType":"slick:pub:list",
+        "title": "Slick RSS",
+        "slickType": "posts",
+        "content": "Slick RSS"
     }
 }

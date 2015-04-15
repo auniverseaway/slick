@@ -15,19 +15,19 @@
     <![endif]-->
   </head>
   <body>
-    <div class="page" data-sly-use.list="${'net.zum.slick.pub.List'}">
+    <div class="page">
       <sly data-sly-include="../header.html" data-sly-unwrap></sly>
-		    <div class="container">
-  		    <sly data-sly-list="${list.children}" data-sly-unwrap>
-            <article>
-    		      <h1><a href="${item.path}.html">${item.title}</a></h1>
-    		      <div>${item.content @ context='html'}</div>
-    		      <p data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=item.jcr:created, dateFormat='MM/dd/yyyy'}">
-            	 ${format.formattedValue}
-            	</p>
-    		    </article>
-          </sly>
-	  	  </div>
+	    <div class="container" data-sly-use.list="${'net.zum.slick.pub.List'}">
+		    <sly data-sly-list="${list.children}" data-sly-unwrap>
+          <article>
+  		      <h1><a href="${item.path}.html">${item.title}</a></h1>
+  		      <div>${item.content @ context='html'}</div>
+  		      <p data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=item.jcr:created, dateFormat='MM/dd/yyyy'}">
+          	 ${format.formattedValue}
+          	</p>
+  		    </article>
+        </sly>
+  	  </div>
     </div>	  
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

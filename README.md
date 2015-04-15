@@ -6,6 +6,20 @@ Demo
 ====
 [dev.experiencemanaged.com](http://dev.experiencemanaged.com/)
 
+Features
+========
+* Creating and editing posts, pages, media (really any taxonomy is fairly easy to build)
+* RSS 2.0 Feed
+* Authentication
+
+Planned
+=======
+* Better support of media
+* Better docs
+* More editing features
+* Pagination
+* Better theming support
+
 Installation
 ============
 
