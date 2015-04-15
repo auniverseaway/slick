@@ -1,6 +1,6 @@
 About
 =====
-Slick is a blogging engine built on top of Sling and Sightly. It uses Sling Models heavily. The idea was to create a lightweight blogging engine to power [experiencemanaged.com](http://experiencemanaged.com/) using common technologies with AEM.
+Slick is a blogging engine built on top of Sling and Sightly. It uses Sling Models heavily. The idea was to create a lightweight blogging engine to power [experiencemanaged.com](http://experiencemanaged.com/) using technologies common to AEM.
 
 Demo
 ====
@@ -29,6 +29,12 @@ Installation
 4. Install jcr.compiler
 5. Install Sling XSS
 6. Install Sightly
+
+Configuration
+=============
+
+1. Copy the themes folder to /content/slick/
+2. Admin is located at http://localhost:8080/content/slick/auth.html
 
 Styling
 =======

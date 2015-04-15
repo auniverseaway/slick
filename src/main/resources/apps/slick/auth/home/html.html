@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <sly data-sly-include="../head.html" data-sly-unwrap></sly>
-  <body data-sly-use.page="${'net.zum.slick.Page'}">
+  <body data-sly-use.page="${'net.zum.slick.SlickPage'}">
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
     <section>
@@ -14,11 +14,11 @@
         	<li>${props} ${item.userProperties[props] @ context="unsafe"}</li>
         </ul>
         
-        <ul data-sly-list="${page.getChildren}">
+        <ul data-sly-list="${page.children}">
           <li>
-            <a href="${item.getPath}">${item.title}</a>
-            <ul data-sly-list.child="${item.getProperties}" class="menu">
-              <li>${child} ${item.getProperties[child] @ context="unsafe"}</li>
+            <a href="${item.path}">${item.title}</a>
+            <ul data-sly-list.child="${item.properties}" class="menu">
+              <li>${child} ${item.properties[child] @ context="unsafe"}</li>
             </ul>
           </li>
         </ul>

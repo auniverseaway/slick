@@ -14,7 +14,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body data-sly-use.page="${'net.zum.slick.Page'}">
+  <body data-sly-use.page="${'net.zum.slick.SlickPage'}">
     <div class="page">
       <sly data-sly-include="../header.html" data-sly-unwrap></sly>
       
@@ -22,10 +22,10 @@
 
         <div class="container">
           <article>
-            <h1>${properties.title}</h1>
-            <div>${properties.content @ context='html'}</div>
+            <h1>${page.title}</h1>
+            <div>${page.content @ context='html'}</div>
             
-            <div data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=properties.jcr:created, dateFormat='MM/dd/yyyy'}">
+            <div data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=page.date, dateFormat='MM/dd/yyyy'}">
             	${format.formattedValue}
             </div>
           </article>

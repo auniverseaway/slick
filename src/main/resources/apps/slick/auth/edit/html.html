@@ -3,12 +3,12 @@
     <sly data-sly-include="../head.html" data-sly-unwrap></sly>
 
 
-  <body data-sly-use.page="${'net.zum.slick.Page'}">
+  <body>
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
     <section id="content-editor" data-sly-use.request="${'net.zum.slick.SlickRequest'}">
       <div class="container">
-        <h1>${page.title}</h1>
+        <h1>${properties.title}</h1>
         
         <sly data-sly-test.edit="${request.edit}" data-sly-unwrap>
           <form method="POST" action="${request.page.path}" enctype="multipart/form-data">
