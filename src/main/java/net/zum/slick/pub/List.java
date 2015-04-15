@@ -34,6 +34,4 @@ public class List {
 		Iterator<Resource> childs = resourceResolver.findResources("/jcr:root/content/slick/" + slickType + "/element(*) order by @jcr:created descending", "xpath");
 		return ResourceUtil.adaptTo(childs,SlickPage.class);
 	}
-	
-	
 }

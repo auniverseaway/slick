@@ -14,23 +14,26 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body data-sly-use.page="${'net.zum.slick.SlickPage'}">
+  <body data-sly-use.item="net.zum.slick.SlickPage">
     <div class="page">
       <sly data-sly-include="../header.html" data-sly-unwrap></sly>
       
       <section>
-
         <div class="container">
-          <article>
-            <h1>${page.title}</h1>
-            <div>${page.content @ context='html'}</div>
-            
-            <div data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=page.date, dateFormat='MM/dd/yyyy'}">
-            	${format.formattedValue}
-            </div>
-          </article>
-        </div>
 
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <article>
+                <h1><a href="${item.path}.html">${item.title}</a></h1>
+                <div>${item.content @ context='html'}</div>
+                <p data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=item.date, dateFormat='MM/dd/yyyy'}">
+                  ${format.formattedValue}
+                </p>
+              </article>
+            </div>
+          </div>
+
+        </div>
       </section>
     </div>
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>

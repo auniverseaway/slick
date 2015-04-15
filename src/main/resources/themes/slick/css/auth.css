@@ -134,8 +134,10 @@ form .editor-area.placeholder {
 form textarea.form-control, form .editor-area {
   padding: 14px 0px 14px 0px;
   width: 100%;
-  height: 600px;
+  min-height: 600px;
   font-size: 2rem; }
+  form textarea.form-control img, form .editor-area img {
+    max-width: 100%; }
 form .editor-area:focus, form .form-control:focus {
   outline: none;
   box-shadow: none; }

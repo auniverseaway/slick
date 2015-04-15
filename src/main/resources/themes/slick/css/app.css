@@ -127,4 +127,4 @@ article {
   font-size: 1.6rem;
   line-height: 2.6rem; }
   article p img {
-    max-width: 480px; }
+    max-width: 100%; }

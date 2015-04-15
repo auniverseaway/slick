@@ -33,10 +33,9 @@
           </div>
           <div class="form-group">
 
-            <script src="/content/slick/themes/slick/js/libs/wysihtml/wysihtml5x-toolbar.min.js"></script>
-
-            
+            <script src="/content/slick/themes/slick/js/libs/wysihtml/wysihtml5x-toolbar.min.js"></script>         
             <script src="/content/slick/themes/slick/js/libs/wysihtml/advanced_and_extended.js"></script>
+            
             <div id="toolbar" style="display: none;">
              
 	            <!-- Bold  -->
@@ -83,24 +82,8 @@
               var editor = new wysihtml5.Editor('editor', {
                 toolbar: 'toolbar',
                 contentEditableMode: true,
-                parserRules: { 
-                  tags: 
-                  { br: {}, 
-                    span: {}, 
-                    div: {},
-                    pre: {},
-                    img: {}, 
-                    p: {},
-                    a: {
-                        "check_attributes": {
-                          "href": "url" // make sure the entered url is really an url
-                        }
-                      }
-                  },
-                  classes: {},
-                      
-                  },
-                useLineBreaks:        false,
+                parserRules: wysihtml5ParserRules,
+                useLineBreaks: false,
               });
 
               //editorInstance.composer.commands.exec("formatBlock", "pre");
