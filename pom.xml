@@ -33,6 +33,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sling.java.version>7</sling.java.version>
+    <sling.host>localhost</sling.host>
+    <sling.port>8080</sling.port>
+    <sling.password>admin</sling.password>
   </properties>
 
   <profiles>
@@ -65,9 +68,9 @@
                   <goal>install</goal>
                 </goals>
                 <configuration>
-                  <slingUrl>http://localhost:8080/system/console/install</slingUrl>
+                  <slingUrl>http://${sling.host}:8080/system/console/install</slingUrl>
                   <user>admin</user>
-                  <password>admin</password>
+                  <password>${sling.password}</password>
                 </configuration>
               </execution>
             </executions>

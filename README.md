@@ -29,12 +29,15 @@ Installation
 4. Install jcr.compiler
 5. Install Sling XSS
 6. Install Sightly
+7. Deploy Slick 
+ * mvn clean install -PautoInstallBundle
+ * mvn clean install -PautoInstallBundle -Dsling.host=YOURHOST -Dsling.password=YOURPASSWORD
 
 Configuration
 =============
 
 1. Copy the themes folder to /content/slick/
-2. Admin is located at http://localhost:8080/content/slick/auth.html
+2. Admin is located at http://localhost:8080/auth.html (admin:admin)
 
 Styling
 =======

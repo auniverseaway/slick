@@ -6,3 +6,9 @@ $("input:text[name=title]").blur(function() {
 		.toLowerCase();
 	$("input:hidden[name=':name']").val(slug);
 });
+
+$(".auth-list").on("click", "#item-delete", function() {
+	var button = $(this);
+	button.siblings(".confirm").toggleClass("horizontal-collapse");
+	button.toggleClass("cancel");
+});

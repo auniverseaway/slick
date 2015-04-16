@@ -107,6 +107,9 @@ header {
         background-color: #009444;
         text-decoration: none;
         color: #FFF; }
+    header .menu li.current a {
+      background-color: #009444;
+      color: #FFF; }
 
 footer {
   background-color: #e7e7e7;
@@ -121,6 +124,86 @@ footer {
     footer p a {
       color: #B6B6B6; }
 
+/* Auth Item List */
+.auth-list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+
+.auth-list li {
+  display: block;
+  height: 68px;
+  line-height: 68px;
+  margin-bottom: 0px;
+  transition: background 0.2s ease;
+  position: relative; }
+
+.auth-list li > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: left 0.2s ease; }
+
+.auth-list li:hover {
+  background-color: #e6e6e6; }
+  .auth-list li:hover > a {
+    left: 14px; }
+  .auth-list li:hover .auth-item-actions a {
+    width: 65px;
+    transition: width 0.2s ease; }
+  .auth-list li:hover .auth-item-actions .confirm.horizontal-collapse {
+    width: 0px; }
+
+.auth-list li .date {
+  margin-right: 18px; }
+
+.auth-item-actions {
+  position: relative; }
+  .auth-item-actions a {
+    display: block;
+    overflow: hidden;
+    float: right;
+    height: 68px;
+    width: 0px;
+    text-indent: 1000px; }
+
+.auth-item-actions .edit {
+  background-color: #a6b79e;
+  background-image: url('../img/edit-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50%; }
+
+.auth-item-actions .view {
+  background-color: #67969e;
+  background-image: url('../img/view-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50%; }
+
+.auth-item-actions .delete {
+  background-color: #cc8579;
+  background-image: url('../img/trash-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50%; }
+
+.auth-item-actions .delete.cancel {
+  background-image: url('../img/cancel-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 50%; }
+
+.horizontal-collapse {
+  width: 0px; }
+
+.auth-list li:hover .auth-item-actions .confirm {
+  text-indent: 0;
+  background: #b53b3b;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  text-transform: uppercase; }
+
+/* End Auth Item List */
 form input.form-control, form textarea.form-control, form .editor-area {
   border: none;
   border-radius: 0px;
@@ -167,4 +250,5 @@ form #toolbar:after {
   content: " ";
   clear: both; }
 
-/* Public */
+.auth .media-list img {
+  max-width: 100%; }

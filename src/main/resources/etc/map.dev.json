@@ -1,12 +1,13 @@
 {
 	"jcr:primaryType": "sling:Folder",
     "http": {
-	    "localhost": {
+	    "jcr:primaryType": "sling:OrderedFolder",
+	    "dev_experiencemanaged_com": {
 	    	"sling:internalRedirect": "/content/slick.html",
 	        "jcr:primaryType": "sling:Mapping",
-	        "sling:match": "localhost.8080/$"
+	        "sling:match": "dev.experiencemanaged.com/$"
 	    },
-	    "localhost.8080": {
+	    "dev.experiencemanaged.com": {
 	    	"sling:internalRedirect": ["/content/slick"],
 	        "jcr:primaryType": "sling:Mapping",
 	        "redirect": {

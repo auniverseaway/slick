@@ -2,7 +2,9 @@
   <div class="container">
     <a href="${header.getPath}.html"><img src="/etc/themes/slick/img/slick-logo.svg"/></a>
     <ul data-sly-list="${header.getAdminHeader}" class="menu">
-      <li><a href="${item.getPath}.html">${item.title}</a></li>
+      <li class="${item.slickType == properties.slickType ? 'current' : '' }">
+		    <a href="${item.getPath}.html">${item.title}</a>
+    	</li>
     </ul>
   </div>
 </header>

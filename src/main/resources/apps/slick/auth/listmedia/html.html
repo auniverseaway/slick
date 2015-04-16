@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <sly data-sly-include="../head.html" data-sly-unwrap></sly>
+  <body class="auth">
+    <sly data-sly-include="../header.html" data-sly-unwrap></sly>
+    
+    <section data-sly-use.actions="${'net.zum.slick.Page'}">
+      <div class="container">
+        <a href="/content/slick/auth/${properties.slickType}/edit.html">New</a>
+      </div>
+    </section>
+
+    <section class="media-list">
+
+      <div class="container" data-sly-use.list="${'net.zum.slick.auth.List'}">
+        <div data-sly-list="${list.children}" class="row">
+          <div class="col-md-3">
+            <img src="${item.path}" alt="img"/>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
+  </body>
+</html>

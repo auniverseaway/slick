@@ -40,7 +40,7 @@
         },
         "media": {
             "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType": "slick:auth:list",
+            "sling:resourceType": "slick:auth:listmedia",
             "title": "Media",
             "slickType": "media",
             "content": "Welcome to Slick Admin",

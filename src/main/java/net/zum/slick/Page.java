@@ -21,10 +21,10 @@ public class Page
 {
 	private final Resource resource;
 	
-	@Inject
+	@Inject @Optional
     private String title;
 	
-	@Inject
+	@Inject @Optional
     private String content;
 	
 	@Inject @Optional @Named("jcr:created")
@@ -33,6 +33,10 @@ public class Page
 	@Inject @Optional
     private String slickType;
 	
+	@Optional
+	public String name;
+	
+	@Optional
 	public String path;
 	
 	public String link;
@@ -45,6 +49,10 @@ public class Page
 	
 	public Page(final Resource resource) {
         this.resource = resource;
+    }
+	
+	public String getName() {
+		return resource.getName();
     }
 	
 	public String getPath() {

@@ -8,24 +8,16 @@
     
     <section id="content-editor" data-sly-use.request="${'net.zum.slick.SlickRequest'}">
       <div class="container">
-        <sly data-sly-test.edit="${request.edit}" data-sly-unwrap>
-          <form method="POST" action="${request.page.path}" enctype="multipart/form-data">
-        </sly>
-        <sly data-sly-test="${!edit}" data-sly-unwrap>
-          <form method="POST" action="/content/slick/${properties.slickType}/*" enctype="multipart/form-data">
-        </sly>
+        <sly data-sly-test.edit="${request.edit}" data-sly-unwrap></sly>
+          
+        <form method="POST" action="/${properties.slickType}/${edit ? request.page.name : '*' }">
+        
+          
 
           <div class="form-group">
             <!-- Post Title -->
-            <sly data-sly-test.edit="${request.edit}" data-sly-unwrap>
-              <input name="title" type="text" class="form-control" value="${request.page.title}" placeholder="enter title">
-              <input name=":name" id="slug" type="hidden" value="${request.page.title}" class="form-control">
-            </sly>
-            <sly data-sly-test="${!edit}" data-sly-unwrap>
-              <input name="title" type="text" class="form-control" value="" placeholder="enter title">
-              <input name=":name" id="slug" type="hidden" class="form-control">
-            </sly>
-            <input name=":redirect" type="hidden" value="/content/slick/auth/${properties.slickType}.html"/>
+            <input name="title" type="text" class="form-control" value="${edit ? request.page.title : '' }" placeholder="enter title">
+            <input name=":name" id="slug" type="hidden" value="${edit ? request.page.name : '' }" class="form-control">
             <input name="sling:resourceType" type="hidden" value="slick:pub:view">
           </div>
           <div class="form-group">
@@ -66,23 +58,15 @@
 	            </div>
             </div>
             
-
-            <sly data-sly-test.edit="${request.edit}" data-sly-unwrap>
-              <textarea name="content" id="editor" class="editor-area" rows="32" placeholder="add content">${request.page.content}</textarea>
-            </sly>
-            <sly data-sly-test="${!edit}" data-sly-unwrap>
-              <textarea name="content" id="editor" class="editor-area" rows="32" placeholder="add content"></textarea>
-            </sly>
-
-
-          	<script>
+            <textarea name="content" id="editor" class="editor-area" rows="32" placeholder="add content">${edit ? request.page.content : '' }</textarea>
+            
+            <script>
               var editor = new wysihtml5.Editor('editor', {
                 toolbar: 'toolbar',
                 contentEditableMode: true,
                 parserRules: wysihtml5ParserRules,
                 useLineBreaks: false,
               });
-
               //editorInstance.composer.commands.exec("formatBlock", "pre");
             </script>
           </div>
@@ -93,12 +77,5 @@
 
     
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    
-
-    <script src="/content/slick/themes/slick/js/app.js"></script>
-    <script src="/content/slick/themes/slick/js/auth.js"></script>
   </body>
 </html>
