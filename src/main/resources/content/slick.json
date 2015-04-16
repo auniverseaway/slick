@@ -51,6 +51,16 @@
                 "slickType": "media",
                 "content": "Welcome to Slick Admin"
             }
+        },
+        "settings": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "slick:auth:settings",
+            "title": "Settings",
+            "slickType": "settings",
+            "content": "Settings",
+            "url":"http://localhost:8080/content/slick",
+            "timezone":"America/Denver",
+            "theme":"slick"
         }
     },
     "feed": {

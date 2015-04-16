@@ -2,6 +2,7 @@ package net.zum.slick;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -23,6 +24,7 @@ public class DateFormatting {
 	@PostConstruct
 	protected void init() {
 		SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
+		formatter.setTimeZone(TimeZone.getTimeZone("America/Denver"));
 	    formattedValue = formatter.format(date.getTime());
 	}
 }

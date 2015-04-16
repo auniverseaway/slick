@@ -1,88 +1,92 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package net.zum.slick;
 
-import javax.inject.Inject;
+import java.util.Calendar;
+import java.util.Iterator;
 
-import org.apache.felix.scr.annotations.Reference;
+import net.zum.slick.libs.Link;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
+
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.apache.sling.api.resource.ResourceUtil;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
-import org.apache.sling.api.resource.ValueMap;
-
-import static org.apache.sling.query.SlingQuery.$;
 
 @Model(adaptables = Resource.class)
-public class Page {
-
-    private final Resource resource;
-    
-    @Reference
-    private ResourceResolverFactory resolverFactory;
-    
-    @Inject
+public class Page
+{
+	private final Resource resource;
+	
+	@Inject
     private String title;
-
-    @Inject
-    @Optional
+	
+	@Inject
     private String content;
-
-    public Page(final Resource resource) {
+	
+	@Inject @Optional @Named("jcr:created")
+    private Calendar date;
+	
+	@Inject @Optional
+    private String slickType;
+	
+	public String path;
+	
+	public String link;
+	
+	public ValueMap properties;
+	
+	public String guid;
+	
+	public Iterator<Page> children;
+	
+	public Page(final Resource resource) {
         this.resource = resource;
     }
-
-    public String getName() {
-        return resource.getName();
+	
+	public String getPath() {
+		return resource.getPath();
     }
-
-    public String getPath() {
-        return resource.getPath();
-    }
-
-    public Object getMetadata() {
-        return resource.getResourceMetadata();
-    }
-
-    public String getTitle() {
+	
+	public String getLink() {
+		Link link = new Link();
+		return link.getUri(resource.getPath());
+	}
+	
+	public String getGuid() throws RepositoryException {
+		Node node = resource.adaptTo(Node.class);
+		return node.getIdentifier();
+	}
+	
+	public String getTitle() {
         return title;
+    }
+	
+	public String getContent() {
+        return content;
     }
 
     public ValueMap getProperties()
     {
         return resource.adaptTo(ValueMap.class);
     }
-
-    public String getContent() {
-        return content;
+    
+    public Calendar getDate()
+    {
+    	return date;
     }
-
-    public Iterable<Page> getParents() {
-        return $(resource).parents().map(Page.class);
+    
+    public String getSlickType()
+    {
+    	return slickType;
     }
-
-    public Iterable<Page> getChildren() {
-        return $(resource).children().map(Page.class);
+    
+    public Iterator<Page> getChildren()
+    {
+    	Iterator<Resource> childs = resource.getChildren().iterator();
+    	return ResourceUtil.adaptTo(childs,Page.class);
     }
-
-    public Iterable<Page> getSiblings() {
-        return $(resource).siblings().not($(resource)).map(Page.class);
-    }
-
 }

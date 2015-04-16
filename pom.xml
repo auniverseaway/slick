@@ -35,6 +35,48 @@
     <sling.java.version>7</sling.java.version>
   </properties>
 
+  <profiles>
+    <profile>
+      <id>autoInstallBundle</id>
+      <build>
+        <plugins>
+          <plugin>
+              <artifactId>maven-clean-plugin</artifactId>
+              <version>2.6.1</version>
+              <configuration>
+                  <filesets>
+                      <fileset>
+                          <directory>${basedir}</directory>
+                          <includes>
+                              <include>slick</include>
+                          </includes>
+                      </fileset>
+                  </filesets>
+              </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>maven-sling-plugin</artifactId>
+            <version>2.1.0</version>
+            <executions>
+              <execution>
+                <phase>install</phase>
+                <goals>
+                  <goal>install</goal>
+                </goals>
+                <configuration>
+                  <slingUrl>http://localhost:8080/system/console/install</slingUrl>
+                  <user>admin</user>
+                  <password>admin</password>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <dependencies>
     <!-- javax -->
     <dependency>
@@ -140,47 +182,4 @@
     </plugins>
     
   </build>
-
-  <profiles>
-    <profile>
-      <id>autoInstallBundle</id>
-      <build>
-        <plugins>
-          <plugin>
-              <artifactId>maven-clean-plugin</artifactId>
-              <version>2.6.1</version>
-              <configuration>
-                  <filesets>
-                      <fileset>
-                          <directory>${basedir}</directory>
-                          <includes>
-                              <include>slick</include>
-                          </includes>
-                      </fileset>
-                  </filesets>
-              </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>maven-sling-plugin</artifactId>
-            <version>2.1.0</version>
-            <executions>
-              <execution>
-                <phase>install</phase>
-                <goals>
-                  <goal>install</goal>
-                </goals>
-                <configuration>
-                  <slingUrl>http://localhost:8080/system/console/install</slingUrl>
-                  <user>admin</user>
-                  <password>admin</password>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-
 </project>

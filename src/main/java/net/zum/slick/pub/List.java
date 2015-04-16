@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import javax.inject.Inject;
 
-import net.zum.slick.SlickPage;
+import net.zum.slick.Page;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -23,15 +23,15 @@ public class List {
 	
 	public String formattedValue;
 	
-	public Iterator<SlickPage> children;
+	public Iterator<Page> children;
 	
 	public List(final Resource resource) {
         this.resource = resource;
     }
 	
-	public Iterator<SlickPage> getChildren() {
+	public Iterator<Page> getChildren() {
 		ResourceResolver resourceResolver = resource.getResourceResolver();
 		Iterator<Resource> childs = resourceResolver.findResources("/jcr:root/content/slick/" + slickType + "/element(*) order by @jcr:created descending", "xpath");
-		return ResourceUtil.adaptTo(childs,SlickPage.class);
+		return ResourceUtil.adaptTo(childs,Page.class);
 	}
 }

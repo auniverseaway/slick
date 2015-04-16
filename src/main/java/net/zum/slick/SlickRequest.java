@@ -32,7 +32,7 @@ public class SlickRequest {
     public String edit;
     
     @Inject @Optional
-    public SlickPage page;
+    public Page page;
 
 	public SlickRequest(SlingHttpServletRequest request) throws Exception {
         this.request = request;
@@ -51,11 +51,11 @@ public class SlickRequest {
         return user.getID();
 	}
 	
-	public SlickPage getPage() throws LoginException
+	public Page getPage() throws LoginException
 	{
 		String ed = request.getParameter("edit"); // Get the parameter because the constructor isn't doing it fast enough.
 		ResourceResolver resourceResolver = request.getResourceResolver();
-		return resourceResolver.getResource(ed).adaptTo(SlickPage.class);
+		return resourceResolver.getResource(ed).adaptTo(Page.class);
 	}
     
 }

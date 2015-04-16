@@ -1,13 +1,13 @@
 <!DOCTYPE html>
   <html lang="en">
     <sly data-sly-include="../head.html" data-sly-unwrap></sly>
-  <body data-sly-use.page="${'net.zum.slick.SlickPage'}">
+  <body data-sly-use.page="${'net.zum.slick.Page'}">
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     <section id="content-editor">
       <div class="container">
         <h1>${page.title}</h1>
-        <form method="POST" action="/content/slick/${properties.slickType}/*" enctype="multipart/form-data">
-          <input type="file" name="*" />
+        <form method="POST" action="/content/slick/${properties.slickType}" enctype="multipart/form-data">
+          <input type="file" id="filename" name="*" />
           <input type="hidden" name="*@TypeHint" value="nt:file" />
           <input type="submit" value="Post" class="button">
         </form>
