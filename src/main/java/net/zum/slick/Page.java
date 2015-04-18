@@ -27,7 +27,7 @@ public class Page
 	@Inject @Optional
     private String content;
 	
-	@Inject @Optional @Named("jcr:created")
+	@Inject @Optional @Named("created")
     private Calendar date;
 	
 	@Inject @Optional

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
   <html lang="en">
-    <sly data-sly-include="../head.html" data-sly-unwrap></sly>
-
-
+  <sly data-sly-include="../head.html" data-sly-unwrap></sly>
   <body>
-    <sly data-sly-include="../header.html" data-sly-unwrap></sly>
+  <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
     <section id="content-editor" data-sly-use.request="${'net.zum.slick.SlickRequest'}">
       <div class="container">
         <sly data-sly-test.edit="${request.edit}" data-sly-unwrap></sly>
           
-        <form method="POST" action="/${properties.slickType}/${edit ? request.page.name : '*' }">
-        
-          
+        <form method="POST" action="${edit ? request.page.path : '/auth/post'}">    
 
           <div class="form-group">
             <!-- Post Title -->
-            <input name="title" type="text" class="form-control" value="${edit ? request.page.title : '' }" placeholder="enter title">
+            <input name="title" type="text" class="form-control" value="${edit ? request.page.title : '' }" tabindex=1 placeholder="enter title">
             <input name=":name" id="slug" type="hidden" value="${edit ? request.page.name : '' }" class="form-control">
             <input name="sling:resourceType" type="hidden" value="slick:pub:view">
+            <input name="slickType" type="hidden" value="${properties.slickType}"/>
           </div>
           <div class="form-group">
 
@@ -58,7 +55,7 @@
 	            </div>
             </div>
             
-            <textarea name="content" id="editor" class="editor-area" rows="32" placeholder="add content">${edit ? request.page.content : '' }</textarea>
+            <textarea name="content" id="editor" class="editor-area" rows="32" tabindex=2 placeholder="add content">${edit ? request.page.content : '' }</textarea>
             
             <script>
               var editor = new wysihtml5.Editor('editor', {
@@ -70,7 +67,11 @@
               //editorInstance.composer.commands.exec("formatBlock", "pre");
             </script>
           </div>
-          <input type="submit" value="Post" class="button">
+          <div class="form-group">
+          	<input type="submit" value="Post" class="button">
+          
+          	<input type="checkbox" name="draft" id="draft" value="draft"><label id="draft-label" for="draft">Draft</label>
+		  </div>
         </form>
       </div>  
     </section>

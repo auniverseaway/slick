@@ -12,7 +12,7 @@
 	         <link>http://dev.experiencemanaged.com/${item.path}.html</link>
 	         <description><![CDATA[ ${item.content @ context='html'} ]]></description>
 	         <content:encoded><![CDATA[ ${item.content @ context='html'} ]]></content:encoded>
-	         <pubDate data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=item.date, dateFormat='EEE, dd MMM yyyy HH:mm:ss Z'}">
+	         <pubDate data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='EEE, dd MMM yyyy HH:mm:ss Z'}">
 	         	${format.formattedValue}
 	         </pubDate>
 	      </item>

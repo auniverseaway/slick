@@ -24,7 +24,7 @@
               <article>
                 <h1><a href="${item.link}">${item.title}</a></h1>
                 <div>${item.content @ context='html'}</div>
-                <p data-sly-use.format="${'net.zum.slick.DateFormatting' @ date=item.date, dateFormat='MM/dd/yyyy h:mm a'}">
+                <p data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='MM/dd/yyyy h:mm a'}">
                   ${format.formattedValue}
                 </p>
               </article>

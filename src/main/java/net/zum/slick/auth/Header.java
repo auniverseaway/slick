@@ -15,7 +15,7 @@ public class Header {
     }
 	
 	public Iterable<Resource> getAdminHeader() {
-		return this.resource.getChildren();
+		return this.resource.getChildren();		
     }
 	
 	public String getPath() {

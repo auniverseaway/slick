@@ -1,4 +1,4 @@
-package net.zum.slick;
+package net.zum.slick.libs;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
