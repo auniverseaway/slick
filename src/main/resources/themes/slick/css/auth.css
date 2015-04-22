@@ -231,6 +231,24 @@ form .button {
   padding: 14px 22px;
   font-size: 1.6rem;
   text-transform: uppercase; }
+form #draft-label {
+  height: 50px;
+  margin: 0px;
+  line-height: 50px;
+  background: #86C1CF;
+  padding: 0px 14px 0px 52px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-image: url(../img/draft-off-icon.svg);
+  background-repeat: no-repeat;
+  font-size: 1.6rem;
+  font-weight: normal; }
+form #draft-label:hover {
+  background-color: #3698AF; }
+form #draft:checked + #draft-label {
+  background-image: url(../img/draft-on-icon.svg);
+  background-repeat: no-repeat; }
 form #toolbar {
   margin: 0px -8px; }
   form #toolbar .edit-command {

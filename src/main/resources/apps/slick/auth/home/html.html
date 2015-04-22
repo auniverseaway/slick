@@ -8,6 +8,7 @@
 
       <div class="container">
         <h1>${page.title}</h1>
+        <h2>${page.properties['title']}</h2>
         <h2 data-sly-use.request="${'net.zum.slick.SlickRequest'}">${request.userid}</h2>
         
         <ul data-sly-list.props="${request.userProperties}">
@@ -22,11 +23,11 @@
             </ul>
           </li>
         </ul>
-        
-        <div data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=properties.date, dateFormat='dd/MM/yyyy'}">
-        	${format.formattedValue}
-        </div>
-        
+
+        <section data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
+          ${constants.properties}
+        </section>
+
         
         
       </div>

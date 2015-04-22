@@ -21,9 +21,9 @@
             <div class="pull-right auth-item-actions">
               <a href="/content/slick/auth/${properties.slickType}/edit.html?edit=${item.path @ context='uri'}" class="auth-list-icon edit">Edit</a>
               <a href="${item.link}" class="auth-list-icon view">View</a>
-              <a href="javascript:{}" onclick="document.getElementById('delete-post').submit();" class="auth-list-icon confirm horizontal-collapse">Confirm</a>
+              <a href="javascript:{}" onclick="document.getElementById('delete-post-${item.name @ context='scriptToken'}').submit();" class="auth-list-icon confirm horizontal-collapse">Confirm</a>
               <a href="#" class="auth-list-icon delete" id="item-delete">Delete</a>
-              <form method="POST" action="${item.path}" class="hidden" id="delete-post">
+              <form method="POST" action="${item.path}" class="hidden" id="delete-post-${item.name}">
                   <input name=":redirect" type="hidden" value="/content/slick/auth/${properties.slickType}.html"/> 
                   <input name=":operation" type="hidden" value="delete"/> 
                   <input type="submit" value="Delete">

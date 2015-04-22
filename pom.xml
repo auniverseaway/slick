@@ -68,7 +68,7 @@
                   <goal>install</goal>
                 </goals>
                 <configuration>
-                  <slingUrl>http://${sling.host}:8080/system/console/install</slingUrl>
+                  <slingUrl>http://${sling.host}:${sling.port}/system/console/install</slingUrl>
                   <user>admin</user>
                   <password>${sling.password}</password>
                 </configuration>
@@ -179,8 +179,8 @@
             </Sling-Bundle-Resources>
             <Sling-Initial-Content>
               apps/slick;path:=/apps/slick;overwrite:=true;uninstall:=true,
-              content;path:=/content;overwriteProperties:=true;uninstall:=false,
-              etc;path:=/etc;overwriteProperties:=true;uninstall:=true,
+              content;path:=/content;overwriteProperties:=false;uninstall:=false,
+              etc;path:=/etc;overwriteProperties:=false;uninstall:=false,
               i18n;path:=/etc/i18n/net.zum.slick;overwrite:=true;uninstall:=true
             </Sling-Initial-Content>
             <Sling-Model-Packages>

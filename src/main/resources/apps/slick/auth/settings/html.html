@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <sly data-sly-include="../head.html" data-sly-unwrap></sly>
+  <body data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
+  <sly data-sly-include="../header.html" data-sly-unwrap></sly>
+
+
+  <section>
+  	<div class="container">
+  		<form method="POST" action="/auth/settings">
+  			<div data-sly-list.child="${constants.properties}" data-sly-unwrap>
+	  			<div class="row form-group">
+					<div class="col-md-2">
+						<label>${child}</label>
+					</div>
+
+					<div class="col-md-4">
+						<input type="text" name="${child}" value="${constants.properties[child] @ context='unsafe'}" />
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="save"/>
+		</form>
+  	</div>
+  </section>
+
+  	<sly data-sly-include="../footer.html" data-sly-unwrap></sly>
+  </body>
+</html>

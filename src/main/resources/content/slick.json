@@ -58,7 +58,9 @@
             "title": "Settings",
             "slickType": "settings",
             "content": "Settings",
-            "url":"http://localhost:8080/content/slick",
+            "siteName": "Slick",
+            "siteDescription": "A blogging engine powered by Sling and Sightly.",
+            "url":"http://localhost:8080",
             "timezone":"America/Denver",
             "theme":"slick"
         },

@@ -220,6 +220,30 @@ form {
     text-transform: uppercase;
   }
 
+  #draft-label {
+    height: 50px;
+    margin: 0px;
+    line-height: 50px;
+    background: #86C1CF;
+    padding: 0px 14px 0px 52px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-image: url(../img/draft-off-icon.svg);
+    background-repeat: no-repeat;
+    font-size: 1.6rem;
+    font-weight: normal;
+  }
+
+  #draft-label:hover {
+    background-color: #3698AF;
+  }
+
+  #draft:checked + #draft-label {
+    background-image: url(../img/draft-on-icon.svg);
+    background-repeat: no-repeat;
+  }
+
   #toolbar {
     margin: 0px -8px;
     

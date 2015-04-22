@@ -6,7 +6,6 @@ import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.api.security.principal.PrincipalManager;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.ModifiableValueMap;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
@@ -25,6 +24,8 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
  
 @SlingServlet(
     resourceTypes = {"slick:auth:post"},
@@ -67,7 +68,8 @@ public class Post extends SlingAllMethodsServlet
 		String draft = request.getParameter("draft");
 		
 		Resource myResource = resolver.getResource("/content/slick/" + slickType);
-		ModifiableValueMap properties = myResource.adaptTo(ModifiableValueMap.class);
+		Map<String,Object> properties = new HashMap<String,Object>();
+		
 		properties.put("jcr:primaryType", "nt:unstructured");
 		properties.put("created", date);
 		properties.put("sling:resourceType", "slick:pub:view");

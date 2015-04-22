@@ -6,7 +6,7 @@
     <section id="content-editor">
       <div class="container">
         <h1>${page.title}</h1>
-        <form method="POST" action="/content/slick/${properties.slickType}" enctype="multipart/form-data">
+        <form method="POST" action="/${properties.slickType}" enctype="multipart/form-data">
           <input type="file" id="filename" name="*" />
           <input type="hidden" name="*@TypeHint" value="nt:file" />
           <input type="submit" value="Post" class="button">
