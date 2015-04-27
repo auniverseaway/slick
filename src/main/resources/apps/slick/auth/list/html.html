@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="slickListApp">
   <sly data-sly-include="../head.html" data-sly-unwrap></sly>
   <body>
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
@@ -38,6 +38,25 @@
       </div>
 
     </section>
+
+    <section ng-controller="SlickListController as slickList">
+      <div>
+        <input ng-model="query">
+      </div>
+      <ul class="unstyled">
+        <li ng-repeat="todo in slickList.todos | filter:query">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+
+      <form ng-submit="slickList.addTodo()">
+        <input type="text" ng-model="slickList.todoText" size="30" placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+
+    </section>
+
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
   </body>
 </html>
