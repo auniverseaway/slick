@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <sly data-sly-use.constants="${'net.zum.slick.libs.Constants'}" data-sly-test.theme="${constants.properties.theme}" data-sly-unwrap></sly>
+    <link rel="apple-touch-icon" href="/content/slick/themes/${theme}/img/apple-touch-icon.png">
     
     <title>Slick</title>
 
-    <sly data-sly-use.constants="${'net.zum.slick.libs.Constants'}" data-sly-test.theme="${constants.properties.theme}"></sly>
+    
     
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="/content/slick/themes/${theme}/css/app.css" rel="stylesheet">

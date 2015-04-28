@@ -141,6 +141,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+	<groupId>org.apache.sling</groupId>
+	<artifactId>org.apache.sling.scripting.sightly</artifactId>
+	<version>1.0.2</version>
+	</dependency>
+    <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.jcr.base</artifactId>
       <version>2.2.2</version>
@@ -179,6 +184,7 @@
             </Sling-Bundle-Resources>
             <Sling-Initial-Content>
               apps/slick;path:=/apps/slick;overwrite:=true;uninstall:=true,
+              apps/sling;path:=/apps/sling;overwriteProperties:=false;uninstall:=true,
               content;path:=/content;overwriteProperties:=false;uninstall:=false,
               etc;path:=/etc;overwriteProperties:=false;uninstall:=false,
               i18n;path:=/etc/i18n/net.zum.slick;overwrite:=true;uninstall:=true

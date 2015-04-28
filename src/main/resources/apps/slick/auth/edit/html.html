@@ -1,22 +1,21 @@
 <!DOCTYPE html>
   <html lang="en">
   <sly data-sly-include="../head.html" data-sly-unwrap></sly>
-  <body ng-app="SlickApp">
+  <body>
   <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
-    <section id="content-editor" data-sly-use.request="${'net.zum.slick.SlickRequest'}" ng-controller="EditController as post">
+    <section id="content-editor" data-sly-use.request="${'net.zum.slick.SlickRequest'}">
       <div class="container">
         <sly data-sly-test.edit="${request.edit}" data-sly-unwrap></sly>
           
-        <form method="POST" action="${edit ? request.page.path : '/auth/post'}" ng-submit="post.save($form.isValid)">    
+        <form method="POST" action="${edit ? request.page.path : '/auth/post'}">    
 
           <div class="form-group">
             <!-- Post Title -->
-            <input name="title" type="text" class="form-control" value="${edit ? request.page.title : '' }" tabindex=1 placeholder="enter title" ng-model="post.title" ng-required ng-email>
+            <input name="title" type="text" class="form-control" value="${edit ? request.page.title : '' }" tabindex=1 placeholder="enter title">
             <input name=":name" id="slug" type="hidden" value="${edit ? request.page.name : '' }" class="form-control">
             <input name="sling:resourceType" type="hidden" value="slick:pub:view">
             <input name="slickType" type="hidden" value="${properties.slickType}"/>
-            <p>{{post.slug}}</p>
           </div>
           <div class="form-group">
 

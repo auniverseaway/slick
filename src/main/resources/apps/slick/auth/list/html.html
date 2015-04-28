@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="slickListApp">
+<html lang="en">
   <sly data-sly-include="../head.html" data-sly-unwrap></sly>
   <body>
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
@@ -21,7 +21,7 @@
             <div class="pull-right auth-item-actions">
               <a href="/content/slick/auth/${properties.slickType}/edit.html?edit=${item.path @ context='uri'}" class="auth-list-icon edit">Edit</a>
               <a href="${item.link}" class="auth-list-icon view">View</a>
-              <a href="javascript:{}" onclick="document.getElementById('delete-post-${item.name @ context='scriptToken'}').submit();" class="auth-list-icon confirm horizontal-collapse">Confirm</a>
+              <a href="javascript:{}" onclick="document.getElementById('delete-post-${item.name @ context='unsafe'}').submit();" class="auth-list-icon confirm horizontal-collapse">Confirm</a>
               <a href="#" class="auth-list-icon delete" id="item-delete">Delete</a>
               <form method="POST" action="${item.path}" class="hidden" id="delete-post-${item.name}">
                   <input name=":redirect" type="hidden" value="/content/slick/auth/${properties.slickType}.html"/> 
@@ -36,24 +36,6 @@
           </li>
         </ul>
       </div>
-
-    </section>
-
-    <section ng-controller="SlickListController as slickList">
-      <div>
-        <input ng-model="query">
-      </div>
-      <ul class="unstyled">
-        <li ng-repeat="todo in slickList.todos | filter:query">
-          <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-      </ul>
-
-      <form ng-submit="slickList.addTodo()">
-        <input type="text" ng-model="slickList.todoText" size="30" placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
 
     </section>
 

@@ -11,6 +11,7 @@ public class NotFound implements Use {
     @Override
     public void init(Bindings bindings) {
         SlingHttpServletResponse response = (SlingHttpServletResponse) bindings.get(SlingBindings.RESPONSE);
+        response.setStatus(404);
         response.setContentType("text/html");
     }
 }
