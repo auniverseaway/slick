@@ -7,7 +7,7 @@ data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
       <title>${constants.properties.siteName}</title>
       <link>${constants.properties.url}</link>
       <description>${constants.properties.siteDescription}</description>
-      <atom:link href="http://dev.experiencemanaged.com/feed.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="${constants.properties.url}/feed.xml" rel="self" type="application/rss+xml" />
       <sly data-sly-list="${list.children}" data-sly-unwrap>
 	      <item>
 	         <title>${item.title}</title>

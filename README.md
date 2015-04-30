@@ -42,7 +42,5 @@ Configuration
 Styling
 =======
 
-1. Install gulp
-2. Install gulp-sass
-3. Run gulp in resources/themes/slick folder
-4. More to come
+1. Use [Brackets](http://brackets.io) + Brackets SASS Extension
+2. Slick theme located in /src/main/resources/themes/slick

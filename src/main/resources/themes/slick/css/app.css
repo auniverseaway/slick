@@ -70,48 +70,61 @@
 
 /* Variables */
 /* Overrides */
+/* line 6, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 body {
   background: #FFF;
   font-family: "GothamLightRegular"; }
+  /* line 9, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
   body a:hover, body a:active, body a:focus {
     text-decoration: none; }
 
+/* line 14, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 b {
   font-family: "GothamMediumRegular";
   font-weight: normal; }
 
 /* Public */
 /* Sticky Footer Fix */
+/* line 22, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 * {
   margin: 0; }
 
+/* line 25, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 html, body {
   height: 100%; }
 
+/* line 28, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 .page {
   min-height: 100%;
   margin-bottom: -72px; }
 
+/* line 32, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 .page:after {
   content: "";
   display: block; }
 
+/* line 36, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 .page:after {
   height: 72px; }
 
 /* End Sticky Footer Fix */
+/* line 42, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 header {
   margin-bottom: 40px;
   text-align: center; }
+  /* line 46, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
   header > a {
     display: inline-block; }
+  /* line 50, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
   header img {
     height: 60px;
     margin: 28px 0px; }
 
+/* line 56, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 footer {
   background-color: #e7e7e7;
   height: 72px; }
+  /* line 59, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
   footer p {
     margin: 0px;
     color: #B6B6B6;
@@ -119,12 +132,17 @@ footer {
     letter-spacing: .3rem;
     font-size: 1rem;
     line-height: 7.2rem; }
+    /* line 66, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
     footer p a {
       color: #B6B6B6; }
 
 /* Article */
+/* line 74, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
 article {
   font-size: 1.6rem;
   line-height: 2.6rem; }
+  /* line 79, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/app.scss */
   article p img {
     max-width: 100%; }
+
+/*# sourceMappingURL=app.css.map */
