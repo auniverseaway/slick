@@ -1,6 +1,5 @@
 {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "slick",
     "title": "Slick",
     "sling:resourceType":"slick:pub:list",
     "slickType": "posts",

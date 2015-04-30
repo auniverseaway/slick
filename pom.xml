@@ -178,17 +178,14 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Bundle-Activator>net.zum.slick.internal.Activator</Bundle-Activator>
-            <Sling-Bundle-Resources>
-              themes;path:=/themes
-            </Sling-Bundle-Resources>
             <Sling-Initial-Content>
-              apps/slick;path:=/apps/slick;overwrite:=true;uninstall:=true,
-              apps/sling;path:=/apps/sling;overwriteProperties:=false;uninstall:=true,
-              content;path:=/content;overwriteProperties:=false;uninstall:=false,
-              etc;path:=/etc;overwriteProperties:=false;uninstall:=false,
-              i18n;path:=/etc/i18n/net.zum.slick;overwrite:=true;uninstall:=true
+                jcr_root/content;overwrite:=true;path:=/content;maven:mount:=false,
+                jcr_root/apps/slick;overwrite:=true;path:=/apps/slick;maven:mount:=false,
+                jcr_root/apps/sling;overwrite:=true;path:=/apps/sling;maven:mount:=false,
+                jcr_root/etc;path:=/etc;overwriteProperties:=false;uninstall:=false,
+                jcr_root/i18n;path:=/etc/i18n/net.zum.slick;overwrite:=true;uninstall:=true
             </Sling-Initial-Content>
+            <Bundle-Activator>net.zum.slick.internal.Activator</Bundle-Activator>
             <Sling-Model-Packages>
               net.zum.slick
             </Sling-Model-Packages>

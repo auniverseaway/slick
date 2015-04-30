@@ -24,3 +24,5 @@ $(".auth-list").on("click", "#item-delete", function() {
 	button.siblings(".confirm").toggleClass("horizontal-collapse");
 	button.toggleClass("cancel");
 });
+
+// TEST 123
