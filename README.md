@@ -4,7 +4,7 @@ Slick is a blogging engine built on top of Sling and Sightly. It uses Sling Mode
 
 Demo
 ====
-[dev.experiencemanaged.com](http://dev.experiencemanaged.com/)
+[slick.millr.org](http://slick.millr.org)
 
 Features
 ========
@@ -33,11 +33,18 @@ Installation
  * mvn clean install -PautoInstallBundle
  * mvn clean install -PautoInstallBundle -Dsling.host=YOURHOST -Dsling.password=YOURPASSWORD
 
-Configuration
-=============
+#Base Configuration
 
 1. Copy the themes folder to /content/slick/
 2. Admin is located at http://localhost:8080/auth.html (admin:admin)
+
+#Apache Configuration
+    <VirtualHost *:80>
+		 ServerName slick.millr.org
+		 ProxyPreserveHost On
+		 ProxyPass / http://localhost:8080/ connectiontimeout=5 timeout=300
+		 ProxyPassReverse / http://localhost:8080/
+    </VirtualHost>
 
 Styling
 =======
