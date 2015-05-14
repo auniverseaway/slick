@@ -2,7 +2,7 @@
 	"jcr:primaryType": "sling:Folder",
     "http": {
 	    "localhost": {
-	    	"sling:internalRedirect": "/content/slick.html",
+	    	"sling:internalRedirect": "/content/slick/posts.html",
 	        "jcr:primaryType": "sling:Mapping",
 	        "sling:match": "localhost.8080/$"
 	    },

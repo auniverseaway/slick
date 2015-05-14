@@ -2,6 +2,8 @@ package net.zum.slick.auth;
 
 import java.util.Iterator;
 
+import javax.jcr.query.Query;
+
 import net.zum.slick.Page;
 import net.zum.slick.libs.Link;
 
@@ -16,14 +18,17 @@ public class Header {
 	
 	public String link;
 	
+	private ResourceResolver resourceResolver;
+	
 	public Header(final Resource resource) {
 		String resourcePath = "/content/slick/auth";
-		ResourceResolver resourceResolver = resource.getResourceResolver();
+		resourceResolver = resource.getResourceResolver();
 		this.resource = resourceResolver.getResource(resourcePath);
     }
 	
 	public Iterator<Page> getAdminHeader() {
-		Iterator<Resource> childs = this.resource.getChildren().iterator();
+		String query = "SELECT * FROM [nt:unstructured] AS s WHERE [title] IS NOT NULL and ISCHILDNODE(s,'/content/slick/auth') ORDER BY [menuOrder] ASC";
+		Iterator<Resource> childs = resourceResolver.findResources(query, Query.JCR_SQL2);
 		return ResourceUtil.adaptTo(childs,Page.class);
     }
 	

@@ -179,7 +179,7 @@
         <configuration>
           <instructions>
             <Sling-Initial-Content>
-                jcr_root/content;overwrite:=true;path:=/content;maven:mount:=false,
+                jcr_root/content;overwrite:=false;uninstall:=false;path:=/content;maven:mount:=false,
                 jcr_root/apps/slick;overwrite:=true;path:=/apps/slick;maven:mount:=false,
                 jcr_root/apps/sling;overwrite:=true;path:=/apps/sling;maven:mount:=false,
                 jcr_root/etc;path:=/etc;overwriteProperties:=false;uninstall:=false,
