@@ -4,8 +4,11 @@
   <body>
   <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
+    <div class="admin-wrap">
+    	<h1>${properties.slickType}</h1>
+    
     <section id="content-editor" data-sly-use.request="${'net.zum.slick.SlickRequest'}">
-      <div class="container">
+      <div class="">
         <sly data-sly-test.edit="${request.edit}" data-sly-unwrap></sly>
           
         <form method="POST" action="${edit ? request.page.path : '/auth/post'}">    
@@ -76,6 +79,7 @@
       </div>  
     </section>
 
+</div>
     
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
   </body>

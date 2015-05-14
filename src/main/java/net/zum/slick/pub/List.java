@@ -7,23 +7,16 @@ import javax.jcr.query.Query;
 import javax.script.Bindings;
 
 import net.zum.slick.Page;
-import net.zum.slick.auth.Post;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
-import org.apache.sling.api.scripting.SlingBindings;
-import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.scripting.sightly.pojo.Use;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class List implements Use {
 
 	private Resource resource;
-	
-	private static final Logger logger = LoggerFactory.getLogger(Post.class);
 	
 	@Inject
 	@Optional

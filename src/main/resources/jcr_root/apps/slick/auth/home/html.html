@@ -4,34 +4,26 @@
   <body data-sly-use.page="${'net.zum.slick.Page'}">
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
-    <section>
-      <div class="container">
-        <h1>${page.title}</h1>
-        <h2>${page.properties['title']}</h2>
-        <h2 data-sly-use.request="${'net.zum.slick.SlickRequest'}">${request.userid}</h2>
-        
-        <ul data-sly-list.props="${request.userProperties}">
-        	<li>${props} ${item.userProperties[props] @ context="unsafe"}</li>
-        </ul>
-        
-        <ul data-sly-list="${page.children}">
-          <li>
-            <a href="${item.path}">${item.title}</a>
-            <ul data-sly-list.child="${item.properties}" class="menu">
-              <li>${child} ${item.properties[child] @ context="unsafe"}</li>
-            </ul>
-          </li>
-        </ul>
-
-        <section data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
-          ${constants.properties}
-        </section>
-
-        
-        
-      </div>
-
-    </section>
+    <div class="admin-wrap">
+    	<section class="subhead clearfix">
+    		<h1>${properties.title}</h1>
+	    	<h2 data-sly-use.request="${'net.zum.slick.SlickRequest'}">${request.userid}</h2>
+	    </section>
+	    <section>
+	        <ul data-sly-list.props="${request.userProperties}">
+	        	<li>${props} ${item.userProperties[props] @ context="unsafe"}</li>
+	        </ul>
+	        
+	        <ul data-sly-list="${page.children}">
+	          <li>
+	            <a href="${item.path}">${item.title}</a>
+	            <ul data-sly-list.child="${item.properties}" class="menu">
+	              <li>${child} ${item.properties[child] @ context="unsafe"}</li>
+	            </ul>
+	          </li>
+	        </ul>
+		</section>
+    </div>
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
   </body>
 </html>

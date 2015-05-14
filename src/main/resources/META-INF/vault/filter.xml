@@ -22,6 +22,6 @@
     See https://jackrabbit.apache.org/filevault/filter.html for details
 -->
 <workspaceFilter vesion="1.0">
-    <filter root="/content/slick"/>
+    <filter root="/content/slick/themes"/>
     <filter root="/apps/slick"/>
 </workspaceFilter>

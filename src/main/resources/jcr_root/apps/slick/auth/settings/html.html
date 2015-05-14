@@ -4,25 +4,29 @@
   <body data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
   <sly data-sly-include="../header.html" data-sly-unwrap></sly>
 
+	<div class="admin-wrap">
+    	<section class="subhead clearfix">
+    		<h1>${properties.title}</h1>
+	    	<h2 data-sly-use.request="${'net.zum.slick.SlickRequest'}">${request.userid}</h2>
+	    </section>
 
-  <section>
-  	<div class="container">
-  		<form method="POST" action="/auth/settings">
-  			<div data-sly-list.child="${constants.properties}" data-sly-unwrap>
-	  			<div class="row form-group">
-					<div class="col-md-2">
-						<label>${child}</label>
+		<section>
+			
+				<form method="POST" action="/auth/settings">
+					<div data-sly-list.child="${constants.properties}" data-sly-unwrap>
+			 			<div class="row form-group">
+							<div class="col-md-2">
+								<label>${child}</label>
+							</div>
+				
+							<div class="col-md-4">
+								<input type="text" name="${child}" value="${constants.properties[child] @ context='unsafe'}" />
+							</div>
+						</div>
 					</div>
-
-					<div class="col-md-4">
-						<input type="text" name="${child}" value="${constants.properties[child] @ context='unsafe'}" />
-					</div>
-				</div>
-			</div>
 			<input type="submit" value="save"/>
-		</form>
-  	</div>
-  </section>
+			</form>
+		</section>
 
   	<sly data-sly-include="../footer.html" data-sly-unwrap></sly>
   </body>

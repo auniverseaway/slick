@@ -12,35 +12,52 @@ b {
 body {
   background: $body-grey;
   font-family: "GothamLightRegular";
+	min-height: 100;
   a:hover {
     text-decoration: none;
   }
 }
 
+// Full Height when no content
+html, body {
+  height: 100%;
+}
+.admin-wrap {
+  min-height: 100%;
+  margin-bottom: -72px; 
+}
+.admin-wrap:after {
+  content: "";
+  display: block;
+}
+.admin-wrap:after {
+  height: 72px; 
+}
+
 header {
   background: #FFF;
-  margin-bottom: 40px;
+  width: 176px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+	text-align: center;
 
   img {
-    height: 60px;
-    float: left;
-    margin: 28px 28px 28px 0px;
+      height: 60px;
+  		margin: 28px;
   }
 
   .menu {
-    float: left;
     list-style: none;
     margin: 0px;
     padding: 0px;
 
     li {
-      float: left;
       letter-spacing: .6rem;
 
       a {
-        line-height: 116px;
+        line-height: 60px;
         text-transform: uppercase;
-        padding: 0px 60px;
         color: #C1C1C1;
         display: block;
         transition: background-color 0.24s ease;
@@ -62,10 +79,38 @@ header {
   } // Menu
 } // Header
 
-footer {
-  background-color: $light-grey;
+.admin-wrap {
+  margin-left: 176px;
   padding: 28px;
-  margin-top: 28px;
+	
+	.subhead {
+		h1, h2, a {
+		text-transform: uppercase;
+		color: $medium-grey;
+		font-size: 2.4rem;
+		line-height: 60px;
+		margin: 0px;
+		float: left;
+		}
+		
+		a {
+			margin-left: 14px; 
+			color: $slick-green;
+		}
+
+		h2 {
+			float: right;
+		}
+	}
+	
+	
+	
+}
+
+footer {
+  padding: 28px;
+  margin: 0px 0px 0px 176px;
+	height: 72px;
   p {
     margin: 0px;
     color: $medium-grey;
@@ -84,24 +129,29 @@ footer {
     margin: 0px;
     padding: 0px;
     list-style: none;
-}
-
-.auth-list li {
-    display: block;
-    height: 68px;
-    line-height: 68px;
-    margin-bottom: 0px;
-    transition: background 0.2s ease;
-    position: relative;
-}
-
-.auth-list li > a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: left 0.2s ease;
+	
+		li {
+			display: block;
+			height: 68px;
+			line-height: 68px;
+			margin-bottom: 0px;
+			transition: background 0.2s ease;
+			position: relative;
+			
+			> a {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				transition: left 0.2s ease;
+			}
+			
+			.date {
+    		margin-right: 0px;
+				transition: margin-right 0.2s ease;
+			}
+		}
 }
 
 .auth-list li:hover {
@@ -110,6 +160,10 @@ footer {
     > a {
       left: 14px;
     }
+	
+		.date {
+			margin-right: 18px;
+		}
 
     .auth-item-actions a {
       width: 65px;
@@ -122,9 +176,7 @@ footer {
 
 }
 
-.auth-list li .date {
-    margin-right: 18px;
-}
+.auth-list li 
 
 .auth-item-actions {
     position: relative;

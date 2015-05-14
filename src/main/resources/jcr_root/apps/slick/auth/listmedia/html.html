@@ -4,23 +4,24 @@
   <body class="auth">
     <sly data-sly-include="../header.html" data-sly-unwrap></sly>
     
-    <section data-sly-use.actions="${'net.zum.slick.Page'}">
-      <div class="container">
-        <a href="/content/slick/auth/${properties.slickType}/edit.html">New</a>
-      </div>
+    <div class="admin-wrap">
+    <section data-sly-use.actions="${'net.zum.slick.Page'}" class="subhead clearfix">
+   		<h1>${properties.slickType}</h1>
+    	<a href="/content/slick/auth/${properties.slickType}/edit.html">New</a>
+    	<h2 data-sly-use.request="${'net.zum.slick.SlickRequest'}">${request.userid}</h2>
     </section>
 
     <section class="media-list">
-
-      <div class="container" data-sly-use.list="${'net.zum.slick.auth.List'}">
+      <div data-sly-use.list="${'net.zum.slick.auth.List'}">
         <div data-sly-list="${list.children}" class="row">
           <div class="col-md-3">
             <img src="${item.path}" alt="img"/>
           </div>
         </div>
       </div>
-
     </section>
+    
+    </div>
     <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
   </body>
 </html>

@@ -3,6 +3,7 @@ package net.zum.slick.auth;
 import java.util.Iterator;
 
 import javax.inject.Inject;
+import javax.jcr.query.Query;
 
 import net.zum.slick.Page;
 
@@ -31,7 +32,11 @@ public class List {
 	
 	public Iterator<Page> getChildren() {
 		ResourceResolver resourceResolver = resource.getResourceResolver();
-		Iterator<Resource> childs = resourceResolver.findResources("/jcr:root/content/slick/" + slickType + "/element(*) order by @jcr:created descending", "xpath");
+		String query = "SELECT * FROM [nt:base] AS s "
+				+ "WHERE "
+				+ "ISCHILDNODE(s,'/content/slick/" + slickType + "') "
+				+ "ORDER BY [created] DESC";
+		Iterator<Resource> childs = resourceResolver.findResources(query, Query.JCR_SQL2);
 		return ResourceUtil.adaptTo(childs,Page.class);
 	}
 }

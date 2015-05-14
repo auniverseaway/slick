@@ -70,121 +70,161 @@
 
 /* Variables */
 /* Overrides */
-/* line 6, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 6, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 b {
   font-family: "GothamMediumRegular";
   font-weight: normal; }
 
 /* Admin */
-/* line 12, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 12, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 body {
   background: #efefef;
-  font-family: "GothamLightRegular"; }
-  /* line 15, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  font-family: "GothamLightRegular";
+  min-height: 100; }
+  /* line 16, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   body a:hover {
     text-decoration: none; }
 
-/* line 20, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 22, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+html, body {
+  height: 100%; }
+
+/* line 25, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+.admin-wrap {
+  min-height: 100%;
+  margin-bottom: -72px; }
+
+/* line 29, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+.admin-wrap:after {
+  content: "";
+  display: block; }
+
+/* line 33, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+.admin-wrap:after {
+  height: 72px; }
+
+/* line 37, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 header {
   background: #FFF;
-  margin-bottom: 40px; }
-  /* line 24, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  width: 176px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  text-align: center; }
+  /* line 45, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   header img {
     height: 60px;
-    float: left;
-    margin: 28px 28px 28px 0px; }
-  /* line 30, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+    margin: 28px; }
+  /* line 50, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   header .menu {
-    float: left;
     list-style: none;
     margin: 0px;
     padding: 0px; }
-    /* line 36, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+    /* line 55, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
     header .menu li {
-      float: left;
       letter-spacing: .6rem; }
-      /* line 40, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+      /* line 58, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
       header .menu li a {
-        line-height: 116px;
+        line-height: 60px;
         text-transform: uppercase;
-        padding: 0px 60px;
         color: #C1C1C1;
         display: block;
         transition: background-color 0.24s ease; }
-      /* line 48, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+      /* line 65, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
       header .menu li a:hover {
         background-color: #009444;
         text-decoration: none;
         color: #FFF; }
-    /* line 55, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+    /* line 72, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
     header .menu li.current a {
       background-color: #009444;
       color: #FFF; }
 
-/* line 65, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 82, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+.admin-wrap {
+  margin-left: 176px;
+  padding: 28px; }
+  /* line 87, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+  .admin-wrap .subhead h1, .admin-wrap .subhead h2, .admin-wrap .subhead a {
+    text-transform: uppercase;
+    color: #B6B6B6;
+    font-size: 2.4rem;
+    line-height: 60px;
+    margin: 0px;
+    float: left; }
+  /* line 96, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+  .admin-wrap .subhead a {
+    margin-left: 14px;
+    color: #009444; }
+  /* line 101, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+  .admin-wrap .subhead h2 {
+    float: right; }
+
+/* line 110, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 footer {
-  background-color: #e7e7e7;
   padding: 28px;
-  margin-top: 28px; }
-  /* line 69, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  margin: 0px 0px 0px 176px;
+  height: 72px; }
+  /* line 114, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   footer p {
     margin: 0px;
     color: #B6B6B6;
     text-transform: uppercase;
     letter-spacing: .3rem;
     font-size: 1rem; }
-    /* line 75, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+    /* line 120, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
     footer p a {
       color: #B6B6B6; }
 
 /* Auth Item List */
-/* line 83, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 128, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-list {
   margin: 0px;
   padding: 0px;
   list-style: none; }
+  /* line 133, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+  .auth-list li {
+    display: block;
+    height: 68px;
+    line-height: 68px;
+    margin-bottom: 0px;
+    transition: background 0.2s ease;
+    position: relative; }
+    /* line 141, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+    .auth-list li > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: left 0.2s ease; }
+    /* line 150, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+    .auth-list li .date {
+      margin-right: 0px;
+      transition: margin-right 0.2s ease; }
 
-/* line 89, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
-.auth-list li {
-  display: block;
-  height: 68px;
-  line-height: 68px;
-  margin-bottom: 0px;
-  transition: background 0.2s ease;
-  position: relative; }
-
-/* line 98, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
-.auth-list li > a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: left 0.2s ease; }
-
-/* line 107, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 157, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-list li:hover {
   background-color: #e6e6e6; }
-  /* line 110, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  /* line 160, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   .auth-list li:hover > a {
     left: 14px; }
-  /* line 114, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  /* line 164, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+  .auth-list li:hover .date {
+    margin-right: 18px; }
+  /* line 168, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   .auth-list li:hover .auth-item-actions a {
     width: 65px;
     transition: width 0.2s ease; }
-  /* line 119, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  /* line 173, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   .auth-list li:hover .auth-item-actions .confirm.horizontal-collapse {
     width: 0px; }
 
-/* line 125, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
-.auth-list li .date {
-  margin-right: 18px; }
-
-/* line 129, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
-.auth-item-actions {
+/* line 181, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+.auth-list li .auth-item-actions {
   position: relative; }
-  /* line 132, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
-  .auth-item-actions a {
+  /* line 184, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
+  .auth-list li .auth-item-actions a {
     display: block;
     overflow: hidden;
     float: right;
@@ -192,38 +232,38 @@ footer {
     width: 0px;
     text-indent: 1000px; }
 
-/* line 142, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 194, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-item-actions .edit {
   background-color: #a6b79e;
   background-image: url('../img/edit-icon.svg');
   background-repeat: no-repeat;
   background-position: 50%; }
 
-/* line 149, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 201, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-item-actions .view {
   background-color: #67969e;
   background-image: url('../img/view-icon.svg');
   background-repeat: no-repeat;
   background-position: 50%; }
 
-/* line 156, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 208, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-item-actions .delete {
   background-color: #cc8579;
   background-image: url('../img/trash-icon.svg');
   background-repeat: no-repeat;
   background-position: 50%; }
 
-/* line 163, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 215, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-item-actions .delete.cancel {
   background-image: url('../img/cancel-icon.svg');
   background-repeat: no-repeat;
   background-position: 50%; }
 
-/* line 169, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 221, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .horizontal-collapse {
   width: 0px; }
 
-/* line 173, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 225, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth-list li:hover .auth-item-actions .confirm {
   text-indent: 0;
   background: #b53b3b;
@@ -233,7 +273,7 @@ footer {
   text-transform: uppercase; }
 
 /* End Auth Item List */
-/* line 185, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 237, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form input.form-control, form textarea.form-control, form .editor-area {
   border: none;
   border-radius: 0px;
@@ -242,23 +282,23 @@ form input.form-control, form textarea.form-control, form .editor-area {
   font-size: 18px;
   font-size: 2rem;
   background-color: #efefef; }
-/* line 195, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 247, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form .editor-area.placeholder {
   color: #999999; }
-/* line 199, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 251, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form textarea.form-control, form .editor-area {
   padding: 14px 0px 14px 0px;
   width: 100%;
   min-height: 600px;
   font-size: 2rem; }
-  /* line 204, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  /* line 256, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   form textarea.form-control img, form .editor-area img {
     max-width: 100%; }
-/* line 209, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 261, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form .editor-area:focus, form .form-control:focus {
   outline: none;
   box-shadow: none; }
-/* line 214, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 266, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form .button {
   background-color: #009444;
   color: #fff;
@@ -266,7 +306,7 @@ form .button {
   padding: 14px 22px;
   font-size: 1.6rem;
   text-transform: uppercase; }
-/* line 223, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 275, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form #draft-label {
   height: 50px;
   margin: 0px;
@@ -280,39 +320,39 @@ form #draft-label {
   background-repeat: no-repeat;
   font-size: 1.6rem;
   font-weight: normal; }
-/* line 238, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 290, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form #draft-label:hover {
   background-color: #3698AF; }
-/* line 242, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 294, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form #draft:checked + #draft-label {
   background-image: url(../img/draft-on-icon.svg);
   background-repeat: no-repeat; }
-/* line 247, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 299, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form #toolbar {
   margin: 0px -8px; }
-  /* line 250, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  /* line 302, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   form #toolbar .edit-command {
     float: left; }
-    /* line 253, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+    /* line 305, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
     form #toolbar .edit-command > a {
       display: block;
       padding: 7px;
       text-transform: uppercase;
       color: #A5CAA3; }
-    /* line 260, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+    /* line 312, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
     form #toolbar .edit-command > a:hover {
       background-color: #009444;
       color: #fff; }
-  /* line 267, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+  /* line 319, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
   form #toolbar > .edit-command:last-child {
     float: right; }
-/* line 273, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 325, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 form #toolbar:after {
   display: table;
   content: " ";
   clear: both; }
 
-/* line 283, /Users/cmillar/Documents/Workspace/slick/src/main/resources/themes/slick/scss/auth.scss */
+/* line 335, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/auth.scss */
 .auth .media-list img {
   max-width: 100%; }
 
