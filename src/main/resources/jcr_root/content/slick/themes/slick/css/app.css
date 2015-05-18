@@ -149,8 +149,8 @@ footer {
 article {
   font-size: 1.6rem;
   line-height: 2.6rem; }
-  /* line 90, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
-  article p img {
+  /* line 93, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+  article img {
     max-width: 100%; }
 
 /*# sourceMappingURL=app.css.map */

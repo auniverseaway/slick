@@ -84,6 +84,7 @@ header {
   padding: 28px;
 	
 	.subhead {
+		margin-bottom: 28px;
 		h1, h2, a {
 		text-transform: uppercase;
 		color: $medium-grey;
@@ -132,8 +133,8 @@ footer {
 	
 		li {
 			display: block;
-			height: 68px;
-			line-height: 68px;
+			height: 60px;
+			line-height: 60px;
 			margin-bottom: 0px;
 			transition: background 0.2s ease;
 			position: relative;
@@ -166,7 +167,7 @@ footer {
 		}
 
     .auth-item-actions a {
-      width: 65px;
+      width: 60px;
       transition: width 0.2s ease;
     }
 
@@ -185,7 +186,7 @@ footer {
       display: block;
       overflow: hidden;
       float: right;
-      height: 68px;
+      height: 60px;
       width: 0px;
       text-indent: 1000px;
     }

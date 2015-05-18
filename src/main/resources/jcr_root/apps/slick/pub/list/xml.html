@@ -8,6 +8,14 @@ data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
       <link>${constants.properties.url}</link>
       <description>${constants.properties.siteDescription}</description>
       <atom:link href="${constants.properties.url}/feed.xml" rel="self" type="application/rss+xml" />
+      <image>
+      	<title>${constants.properties.siteName}</title>
+	    <url>${constants.properties.url}/themes/${theme}img/apple-touch-icon.png</url>
+	    <link>${constants.properties.url}</link>
+	    <width>128</width>
+    	<height>128</height>
+    	<description>${constants.properties.siteDescription}</description>
+  	  </image>
       <sly data-sly-list="${list.children}" data-sly-unwrap>
 	      <item>
 	         <title>${item.title}</title>
