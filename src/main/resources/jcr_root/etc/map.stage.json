@@ -2,8 +2,8 @@
 	"jcr:primaryType": "sling:Folder",
     "http": {
 	    "jcr:primaryType": "sling:OrderedFolder",
-	    "dev_experiencemanaged_com": {
-	    	"sling:internalRedirect": "/content/slick.html",
+	    "slick_millr_org": {
+	    	"sling:internalRedirect": "/content/slick/posts.html",
 	        "jcr:primaryType": "sling:Mapping",
 	        "sling:match": "slick.millr.org/$"
 	    },
