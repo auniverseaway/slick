@@ -1,14 +1,14 @@
 package net.zum.slick.libs;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.servlet.ServletException;
+
+import net.zum.slick.models.Settings;
 
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
@@ -17,6 +17,8 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.apache.sling.commons.json.JSONException;
+import org.apache.sling.commons.json.JSONObject;
 import org.apache.sling.models.annotations.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,9 +50,10 @@ public class FlushCache extends SlingAllMethodsServlet {
 		HttpURLConnection urlConn = null;
 		InputStream inStream = null;
 		
+		// Get Settings
 		Resource resource = request.getResource();
-		Constants constants = new Constants(resource);
-		String domain = constants.getUrl();
+		Settings settings = resource.adaptTo(Settings.class);
+		String domain = settings.getProperties().get("url",String.class);
 				
 		try {
 			
@@ -59,24 +62,26 @@ public class FlushCache extends SlingAllMethodsServlet {
 			urlConn.setRequestMethod("POST");
 			urlConn.setAllowUserInteraction(false);
 			urlConn.setDoOutput(true);
-			urlConn.setRequestProperty("accept", "text/html");
+			urlConn.setRequestProperty("accept", "application/json");
 			urlConn.setRequestProperty("CQ-Action", "Activate");
 			urlConn.setRequestProperty("CQ-Handle", "/content");
 			
-			final int responseCode = urlConn.getResponseCode();
-			logger.debug("Response Code: " + responseCode);
-			
-			if (responseCode == 200) {
-				inStream = urlConn.getInputStream();
-				data = convertStreamToString(inStream, url.getProtocol() + "://" + url.getHost());
-			} else {
-				data = "Status:" + responseCode;
-			}
+			//final int responseCode = urlConn.getResponseCode();
+			final String responseMessage = urlConn.getResponseMessage();
+						
+			// Create the JSON object response
+			JSONObject jsonResponse = new JSONObject();
+			jsonResponse.put("flush_status", responseMessage);
 		
+			data = jsonResponse.toString();
+			
 		} catch (final MalformedURLException e) {
 			logger.error("URL not valid.", e);
 		} catch (final IOException e) {
 			logger.error("IO Exception: " + e.getMessage(), e);
+		} catch (JSONException e) {
+			// We couldn't make a JSON response
+			e.printStackTrace();
 		} finally {
 			if (inStream != null) {
 				try {
@@ -90,42 +95,8 @@ public class FlushCache extends SlingAllMethodsServlet {
 			}
 		}
 		
-		response.setContentType("text/html");
+		response.setContentType("application/json");
 		response.getWriter().write(data);
-	}
-	
-	/**
-	 * Convert stream to string.
-	 * @param inputStream the input stream
-	 * @param domain the domain
-	 * @return the string
-	 */
-	private String convertStreamToString(final InputStream inputStream, final String domain) {
-		
-		BufferedReader br = null;
-		final StringBuilder sb = new StringBuilder();
-
-		String line = null;
-		try {
-			// Read Input
-			br = new BufferedReader(new InputStreamReader(inputStream));
-			// Read Line
-			while ((line = br.readLine()) != null) {
-				sb.append(line);
-			}
-
-		} catch (final IOException e) {
-			logger.error("IOException: " + e.getMessage(), e);
-		} finally {
-			if (br != null) {
-				try {
-					br.close();
-				} catch (final IOException e) {
-					logger.error("IOException while closing stream: " + e.getMessage(), e);
-				}
-			}
-		}
-		return sb.toString();
 	}
 }
 

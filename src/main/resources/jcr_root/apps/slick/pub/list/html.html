@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <sly data-sly-use.constants="${'net.zum.slick.libs.Constants'}" data-sly-test.theme="${constants.properties.theme}" data-sly-unwrap></sly>
+    <sly data-sly-use.settings="${'net.zum.slick.models.Settings'}" data-sly-test.theme="${settings.properties.theme}" data-sly-unwrap></sly>
     <link rel="apple-touch-icon" href="/content/slick/themes/${theme}/img/apple-touch-icon.png">
     
     <title>Slick</title>
 
-    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${constants.properties.url}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${settings.properties.url}/feed.xml" />
     
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="/content/slick/themes/${theme}/css/app.css" rel="stylesheet">

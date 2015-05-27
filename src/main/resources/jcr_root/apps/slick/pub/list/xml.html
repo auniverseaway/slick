@@ -2,26 +2,26 @@
 xmlns:atom="http://www.w3.org/2005/Atom" 
 xmlns:content="http://purl.org/rss/1.0/modules/content/" 
 data-sly-use.list="${'net.zum.slick.pub.List' @ slickType=properties.slickType }" 
-data-sly-use.constants="${'net.zum.slick.libs.Constants'}">
+data-sly-use.settings="${'net.zum.slick.models.Settings'}">
    <channel>
-      <title>${constants.properties.siteName}</title>
-      <link>${constants.properties.url}</link>
-      <description>${constants.properties.siteDescription}</description>
-      <atom:link href="${constants.url}/feed.xml" rel="self" type="application/rss+xml" />
+      <title>${settings.properties.siteName}</title>
+      <link>${settings.properties.url}</link>
+      <description>${settings.properties.siteDescription}</description>
+      <atom:link href="${settings.properties.url}/feed.xml" rel="self" type="application/rss+xml" />
       <image>
-      	<title>${constants.properties.siteName}</title>
-	    <url>${constants.properties.url}/themes/${theme}img/apple-touch-icon.png</url>
-	    <link>${constants.properties.url}</link>
+      	<title>${settings.properties.siteName}</title>
+	    <url>${settings.properties.url}/themes/${theme}img/apple-touch-icon.png</url>
+	    <link>${settings.properties.url}</link>
 	    <width>128</width>
     	<height>128</height>
-    	<description>${constants.properties.siteDescription}</description>
+    	<description>${settings.properties.siteDescription}</description>
   	  </image>
       <sly data-sly-list="${list.children}" data-sly-unwrap>
 	      <item>
 	         <title>${item.title}</title>
 	         <!-- TODO: Fix permalink -->
 	         <guid isPermaLink="false">${item.guid}</guid>
-	         <link>${constants.properties.url}${item.path}.html</link>
+	         <link>${settings.properties.url}${item.path}.html</link>
 	         <description><![CDATA[ ${item.content @ context='html'} ]]></description>
 	         <content:encoded><![CDATA[ ${item.content @ context='html'} ]]></content:encoded>
 	         <pubDate data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='EEE, dd MMM yyyy HH:mm:ss Z'}">

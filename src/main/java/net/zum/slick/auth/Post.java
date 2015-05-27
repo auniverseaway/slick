@@ -1,5 +1,7 @@
 package net.zum.slick.auth;
 
+import net.zum.slick.libs.FlushCache;
+
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -85,7 +87,7 @@ public class Post extends SlingAllMethodsServlet
 		}
 		
 		resolver.commit();
-    	
+		
 		JSONObject jsonResponse = new JSONObject();
       
 		try {
@@ -97,6 +99,10 @@ public class Post extends SlingAllMethodsServlet
 			jsonResponse.put("created", date);
 			jsonResponse.put("draft", draft);
 			response.getWriter().write(jsonResponse.toString(2));
+			
+			// Flush the cache
+			FlushCache fc = request.adaptTo(FlushCache.class);
+			fc.doGet(request, response);
 			
 		} catch (JSONException e) {
 			e.printStackTrace();
