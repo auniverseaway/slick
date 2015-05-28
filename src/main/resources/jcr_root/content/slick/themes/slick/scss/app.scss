@@ -16,6 +16,10 @@ b {
   font-weight: normal;
 }
 
+label {
+	font-weight: normal;
+}
+
 /* Public */
 
 /* Sticky Footer Fix */
@@ -85,6 +89,7 @@ footer {
 article {
   font-size: 1.6rem;
   line-height: 2.6rem;
+	margin-bottom: 12rem;
 
   p {
     

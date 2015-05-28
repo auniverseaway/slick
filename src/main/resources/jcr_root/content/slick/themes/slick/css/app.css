@@ -83,56 +83,60 @@ b {
   font-family: "GothamMediumRegular";
   font-weight: normal; }
 
+/* line 19, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+label {
+  font-weight: normal; }
+
 /* Public */
 /* Sticky Footer Fix */
-/* line 22, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 26, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 * {
   margin: 0; }
 
-/* line 25, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 29, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 html, body {
   height: 100%; }
 
-/* line 28, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 32, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 .page {
   min-height: 100%;
   margin-bottom: -72px; }
 
-/* line 32, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 36, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 .page:after {
   content: "";
   display: block; }
 
-/* line 36, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 40, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 .page:after {
   height: 72px; }
 
 /* End Sticky Footer Fix */
-/* line 42, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 46, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 header {
   margin-bottom: 40px;
   text-align: center; }
-  /* line 46, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+  /* line 50, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
   header > a {
     display: inline-block; }
-  /* line 50, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+  /* line 54, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
   header img {
     height: 60px;
     margin: 28px 0px; }
-  /* line 55, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+  /* line 59, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
   header .pages-list {
     list-style: none;
     margin: 0;
     padding: 0; }
-    /* line 60, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+    /* line 64, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
     header .pages-list li {
       display: inline; }
 
-/* line 67, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 71, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 footer {
   background-color: #e7e7e7;
   height: 72px; }
-  /* line 70, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+  /* line 74, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
   footer p {
     margin: 0px;
     color: #B6B6B6;
@@ -140,16 +144,17 @@ footer {
     letter-spacing: .3rem;
     font-size: 1rem;
     line-height: 7.2rem; }
-    /* line 77, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+    /* line 81, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
     footer p a {
       color: #B6B6B6; }
 
 /* Article */
-/* line 85, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+/* line 89, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
 article {
   font-size: 1.6rem;
-  line-height: 2.6rem; }
-  /* line 93, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
+  line-height: 2.6rem;
+  margin-bottom: 12rem; }
+  /* line 98, /Users/cmillar/Documents/Workspace/slick/src/main/resources/jcr_root/content/slick/themes/slick/scss/app.scss */
   article img {
     max-width: 100%; }
 
