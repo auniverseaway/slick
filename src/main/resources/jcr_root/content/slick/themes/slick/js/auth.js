@@ -24,3 +24,13 @@ $(".auth-list").on("click", "#item-delete", function() {
 	button.siblings(".confirm").toggleClass("horizontal-collapse");
 	button.toggleClass("cancel");
 });
+
+// Check Checkboxes for default post servlet (seems to not support the default checked param)
+function validateCheckbox(checkbox) {
+	if (checkbox.checked) {
+	    checkbox.setAttribute("value","true");
+	} else {
+		checkbox.removeAttribute("value");
+	    checkbox.removeAttribute("checked");
+	}
+}

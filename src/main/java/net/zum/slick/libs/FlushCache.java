@@ -46,16 +46,46 @@ public class FlushCache extends SlingAllMethodsServlet {
     
 	public void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
 		
-		String data = null;
-		HttpURLConnection urlConn = null;
-		InputStream inStream = null;
-		
 		// Get Settings
 		Resource resource = request.getResource();
 		Settings settings = resource.adaptTo(Settings.class);
-		String domain = settings.getProperties().get("url",String.class);
-				
+		Boolean hasDispatcher = settings.getProperties().get("dispatcher",Boolean.class);
+		
+		// Create the response message
+		String responseMessage = null;
+		
+		// Create the JSON object response
+		JSONObject jsonResponse = new JSONObject();
+		
+		if(hasDispatcher){
+			logger.info("FLUSH DISPATCHER ****************");
+			responseMessage = doFlush(settings, jsonResponse);
+		} else {
+			logger.info("NO DISPATCHER ****************");
+			responseMessage = "no_dispatcher";
+		}
+		
 		try {
+			jsonResponse.put("flush_status", responseMessage);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		response.setContentType("application/json");
+		response.getWriter().write(jsonResponse.toString());
+	}
+
+	private String doFlush(Settings settings,JSONObject jsonResponse)
+			throws IOException {
+		
+		HttpURLConnection urlConn = null;
+		InputStream inStream = null;
+		String responseMessage = null;
+		
+		try {
+			
+			// Get the site URL
+			String domain = settings.getProperties().get("url",String.class);
 			
 			final URL url = new URL(domain + "/dispatcher/invalidate.cache");
 			urlConn = (HttpURLConnection) url.openConnection();
@@ -67,21 +97,12 @@ public class FlushCache extends SlingAllMethodsServlet {
 			urlConn.setRequestProperty("CQ-Handle", "/content");
 			
 			//final int responseCode = urlConn.getResponseCode();
-			final String responseMessage = urlConn.getResponseMessage();
-						
-			// Create the JSON object response
-			JSONObject jsonResponse = new JSONObject();
-			jsonResponse.put("flush_status", responseMessage);
-		
-			data = jsonResponse.toString();
+			responseMessage = urlConn.getResponseMessage();
 			
 		} catch (final MalformedURLException e) {
-			logger.error("URL not valid.", e);
+			responseMessage = "URL not valid";
 		} catch (final IOException e) {
-			logger.error("IO Exception: " + e.getMessage(), e);
-		} catch (JSONException e) {
-			// We couldn't make a JSON response
-			e.printStackTrace();
+			responseMessage = "IO Exception";
 		} finally {
 			if (inStream != null) {
 				try {
@@ -95,8 +116,7 @@ public class FlushCache extends SlingAllMethodsServlet {
 			}
 		}
 		
-		response.setContentType("application/json");
-		response.getWriter().write(data);
+		return responseMessage;
 	}
 }
 

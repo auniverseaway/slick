@@ -12,22 +12,30 @@
 
 		<section>
 			
-				<form method="POST" action="/auth/settings">
+				<form method="POST" action="/content/slick/auth/settings">
 					<div data-sly-list.child="${settings.properties}" data-sly-unwrap>
 			 			<div class="row form-group">
 							<div class="col-md-2">
 								<label>${child}</label>
 							</div>
-				
 							<div class="col-md-4">
-								<input type="text" name="${child}" value="${settings.properties[child] @ context='unsafe'}" />
+								<input data-sly-test.input="${child != 'dispatcher'}" type="text" name="${child}" value="${settings.properties[child] @ context='unsafe'}" />
+								<fieldset data-sly-test="${!input}">
+									<input type="checkbox" name="${child}" onclick="validateCheckbox(this);" checked="${settings.properties[child]}" />
+									<input type="hidden" name="${child}@TypeHint" value="Boolean" />
+									<input type="hidden" name="${child}@DefaultValue" value="false"/> 
+    								<input type="hidden" name="${child}@UseDefaultWhenMissing" value="true"/>
+								</fieldset>
 							</div>
 						</div>
 					</div>
+
+					<input type="checkbox" name="checked" />
+    				<input type="hidden" name="checked@TypeHint" value="Boolean" />
 			<input type="submit" value="save"/>
 			</form>
 		</section>
-
+	</div>
   	<sly data-sly-include="../footer.html" data-sly-unwrap></sly>
   </body>
 </html>
