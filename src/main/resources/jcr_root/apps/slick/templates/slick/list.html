@@ -20,25 +20,24 @@
     <![endif]-->
   </head>
   <body>
-    <div class="page">
-      <sly data-sly-include="../header.html" data-sly-unwrap></sly>
-	    <div class="container" data-sly-use.list="${'net.zum.slick.pub.List' @ slickType=properties.slickType }">
-		    <sly data-sly-list="${list.children}" data-sly-unwrap>
-          <div class="row">
+  	<div class="page">
+  	  <sly data-sly-include="../../templates/${settings.properties.theme}/header.html" data-sly-unwrap></sly>
+  	  <div class="container" data-sly-use.list="${'net.zum.slick.pub.List' @ slickType=properties.slickType }" data-sly-list="${list.children}">
+		  <p>${list.page}</p>
+		  <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <article>
                 <h1><a href="${item.link}">${item.title}</a></h1>
+                <p data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='MMM, d yyyy h:mm a'}">
+               		${format.formattedValue}
+               	</p>
                 <div>${item.content @ context='unsafe'}</div>
-                <p data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='MM/dd/yyyy h:mm a'}">
-                  ${format.formattedValue}
-                </p>
               </article>
             </div>
           </div>
-        </sly>
   	  </div>
-    </div>	  
-    <sly data-sly-include="../footer.html" data-sly-unwrap></sly>
+  	</div>	  
+    <sly data-sly-include="../../templates/${settings.properties.theme}/footer.html" data-sly-unwrap></sly>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/content/slick/themes/${theme}/js/app.js"></script>

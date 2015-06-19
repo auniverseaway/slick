@@ -18,12 +18,20 @@ body {
   }
 }
 
+h3 {
+  font-size: 1.4rem;
+  font-family: GothamBoldRegular;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
 // Full Height when no content
 html, body {
   height: 100%;
 }
 .admin-wrap {
   min-height: 100%;
+  margin-bottom: -72px; 
   margin-bottom: -72px; 
 }
 .admin-wrap:after {
@@ -337,5 +345,40 @@ form {
       max-width: 100%;
     }
   }
+}
+
+/* User Entry */
+.clever-input {
+	position: relative;
+  margin: 48px 0px;
+	font-size: 2rem;
+	
+	label {
+		color: $medium-grey;
+  	position: absolute;
+		z-index: 0;
+		left: 0;
+		top: 0;
+		transition: top .25s ease-in;
+		font-weight: normal;
+		
+		&.has-value {
+			top: -28px;
+		}
+		
+		&.red {
+			color: rgb(181, 59, 59);
+		}
+		
+	}
+	
+	input[type="text"],input[type="password"] {
+		position: relative;
+		border: none;
+		background-color: transparent;
+		z-index: 100;
+  	padding: 0;
+  	margin: 0;
+	}	
 }
 

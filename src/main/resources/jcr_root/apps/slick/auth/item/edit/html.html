@@ -17,6 +17,7 @@
             <!-- Post Title -->
             <input name="title" type="text" class="form-control" value="${edit ? request.page.title : '' }" tabindex=1 placeholder="enter title">
             <input name=":name" id="slug" type="hidden" value="${edit ? request.page.name : '' }" class="form-control">
+            <input name=":name" id="original-slug" type="hidden" value="${edit ? request.page.name : '' }" class="form-control">
             <input name="sling:resourceType" type="hidden" value="slick:pub:view">
             <input name="slickType" type="hidden" value="${properties.slickType}"/>
           </div>

@@ -68,6 +68,7 @@ public class Post extends SlingAllMethodsServlet
 		String slickType = request.getParameter("slickType");
 		Calendar date = Calendar.getInstance();
 		String draft = request.getParameter("draft");
+		String createdBy = session.getUserID();
 		
 		Resource myResource = resolver.getResource("/content/slick/" + slickType);
 		Map<String,Object> properties = new HashMap<String,Object>();
@@ -78,6 +79,7 @@ public class Post extends SlingAllMethodsServlet
 		properties.put("title", title);
 		properties.put("content", content);
 		properties.put("slickType", slickType);
+		properties.put("createdBy", createdBy);
 		
 		Resource dummy = resolver.create(myResource, name, properties);
 		

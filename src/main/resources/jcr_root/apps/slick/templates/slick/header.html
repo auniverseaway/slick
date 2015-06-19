@@ -1,0 +1,9 @@
+<header data-sly-use.settings="${'net.zum.slick.models.Settings'}">
+  <div class="container">
+    <a href="/"><img src="/themes/${settings.properties.theme}/img/slick-logo.svg"/></a>
+    <sly data-sly-use.list="${'net.zum.slick.pub.List' @ slickType='pages'}" data-sly-unwrap></sly>
+    <ul data-sly-list="${list.children}" class="pages-list">
+    	<li><a href="${item.link}">${item.title}</a></li>
+	</ul>
+  </div>
+</header>

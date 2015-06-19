@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Slick</title>
+    <title>${properties.title} on Slick</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="/content/slick/themes/slick/css/app.css" rel="stylesheet">
@@ -25,9 +25,12 @@
             <div class="col-md-8 col-md-offset-2">
               <article>
                 <h1><a href="${item.path}.html">${item.title}</a></h1>
+                <p data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='MMM, d yyyy hh:mm a'}">
+               		${format.formattedValue}
+               	</p>
                 <div>${item.content @ context='html'}</div>
-                <p data-sly-use.format="${'net.zum.slick.libs.DateFormatting' @ date=item.date, dateFormat='MM/dd/yyyy'}">
-                  ${format.formattedValue}
+                <p data-sly-test="${properties.createdBy}" data-sly-use.user="${'net.zum.slick.User' @ userId=properties.createdBy}">
+                	By: ${user.user.firstName} ${user.user.lastName}
                 </p>
               </article>
             </div>

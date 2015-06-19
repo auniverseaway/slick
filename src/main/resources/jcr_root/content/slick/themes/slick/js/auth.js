@@ -34,3 +34,33 @@ function validateCheckbox(checkbox) {
 	    checkbox.removeAttribute("checked");
 	}
 }
+
+$(".clever-input").on("focus", "input", function() {
+	var imp = $(this);
+	imp.next().addClass("has-value");
+});
+
+$(".clever-input").on("focusout", "input", function() {
+	var imp = $(this);
+	var label = imp.next();
+	if(!imp.val()) {
+		label.removeClass("has-value");
+		if(imp.parent().hasClass("required")) {
+			label.addClass("red");
+		}
+	} else {
+		label.removeClass("red");
+	}
+});
+
+$(".validate").submit(function( event ) {
+	event.preventDefault();
+	var stuff = $(".required > input").filter(function( index ) {
+	    return $(this).val().length === 0;
+	});
+	if (!stuff.length) {
+		this.submit();
+	} else {
+		console.log(stuff.length + " Don't Submit");
+	}
+});

@@ -8,6 +8,7 @@ import javax.script.Bindings;
 
 import net.zum.slick.Page;
 
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
@@ -17,6 +18,10 @@ import org.apache.sling.scripting.sightly.pojo.Use;
 public class List implements Use {
 
 	private Resource resource;
+	
+	private SlingHttpServletRequest request;
+	
+	public String page;
 	
 	@Inject
 	@Optional
@@ -30,6 +35,7 @@ public class List implements Use {
     public void init(Bindings bindings) {
 		this.resource = (Resource)bindings.get("resource");
 		this.slickType = (String)bindings.get("slickType");
+		this.request = (SlingHttpServletRequest)bindings.get("request");
 	}
 	
 	public Iterator<Page> getChildren() {
@@ -40,5 +46,10 @@ public class List implements Use {
 				+ "ORDER BY [created] DESC";
 		Iterator<Resource> childs = resourceResolver.findResources(query, Query.JCR_SQL2);
 		return ResourceUtil.adaptTo(childs,Page.class);
+	}
+	
+	public String getPage()
+	{
+		return request.getParameter("page");
 	}
 }
