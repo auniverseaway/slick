@@ -1,9 +1,0 @@
-{
-    "sly.serverUrl": "http://localhost:8080",
-    "sly.remoteUser": "admin",
-    "sly.remoteUserPassword": "admin",
-    "sly.acceptSelfSignedCertificates": false,
-		"sass.options": {
-        "outputDir": "../css/"
-    }
-}

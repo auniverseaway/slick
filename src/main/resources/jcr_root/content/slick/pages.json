@@ -1,6 +1,0 @@
-{
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType":"slick:pub:list",
-    "title": "Slick Pages",
-    "slickType": "pages"
-}
